@@ -16,7 +16,7 @@ namespace Hotelli
         {
             MySqlCommand komento = new MySqlCommand();
             String adding = "INSERT INTO asiakkaat " +
-                "(Käyttäjänimi, Etunimi, Sukunimi, Lähiosoite, Postinumero, Postitoimipaikka, Salasana) " +
+                "(kayttajanimi, etunimi, sukunimi, lahiosoite, postinumero, postitoimipaikka, salasana) " +
                 "VALUES (@ktj, @etu, @suku, @oso, @pnum, @ppaik, @sala); ";
             komento.CommandText = adding;
             komento.Connection = yhteys.otaYhteys();
@@ -42,7 +42,7 @@ namespace Hotelli
         }
         public DataTable getAsiakkaat()
         {
-            MySqlCommand komento = new MySqlCommand("SELECT Käyttäjänimi, Etunimi, Sukunimi, Lähiosoite, Postinumero, Postitoimipaikka, Salasana From asiakkaat", yhteys.otaYhteys());
+            MySqlCommand komento = new MySqlCommand("SELECT kayttajanimi, etunimi, sukunimi, lahiosoite, postinumero, postitoimipaikka, salasana From asiakkaat", yhteys.otaYhteys());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 
@@ -55,7 +55,7 @@ namespace Hotelli
         public bool editAsiakas(String ktj, String etu, String suku, String oso, String pnum, String ppaik, String sala)
         {
             MySqlCommand komento = new MySqlCommand();
-            String updating = "UPDATE asiakkaat SET Etunimi = @etu, Sukunimi = @suku, Lähiosoite = @oso, Postinumero = @pnum, Postitoimipaikka = @ppaik, Salasana = @sala WHERE Käyttäjänimi = @ktj";
+            String updating = "UPDATE asiakkaat SET etunimi = @etu, sukunimi = @suku, lahiosoite = @oso, postinumero = @pnum, postitoimipaikka = @ppaik, salasana = @sala WHERE kayttajanimi = @ktj";
             komento.CommandText = updating;
             komento.Connection = yhteys.otaYhteys();
             komento.Parameters.Add("@ktj", MySqlDbType.VarChar).Value = ktj;
@@ -81,7 +81,7 @@ namespace Hotelli
         public bool deleteAsiakas(String Käyttäjänimi)
         {
             MySqlCommand komento = new MySqlCommand();
-            String deleting = "DELETE FROM asiakkaat WHERE Käyttäjänimi = @ktj";
+            String deleting = "DELETE FROM asiakkaat WHERE kayttajanimi = @ktj";
             komento.CommandText = deleting;
             komento.Connection = yhteys.otaYhteys();
             komento.Parameters.Add("@ktj", MySqlDbType.UInt32).Value = Käyttäjänimi;
