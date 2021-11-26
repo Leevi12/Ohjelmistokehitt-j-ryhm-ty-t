@@ -26,95 +26,98 @@ namespace Hotelli
 
         private void TyhjAsBT_Click(object sender, EventArgs e)
         {
-            KayttajaTB.Text = "";
             EtunimiTB.Text = "";
             SukunimiTB.Text = "";
+            KayttajaTB.Text = "";
             OsoiteTB.Text = "";
             PnumTB.Text = "";
             PtPaikkaTB.Text = "";
             SalasanaTB.Text = "";
         }
 
-        // JÄIN TÄHÄN!!!!!!!!!!!!!!!!!!!!
-        // JATKA TALLENNUSNAPIN TEOSTA 
-
-
-
 
         private void TallAsBT_Click(object sender, EventArgs e)
         {
-            String bok = bookTB.Text;
-            String author = authorTB.Text;
-            int noc = Int32.Parse(nocTB.Text);
+            String etu = EtunimiTB.Text;
+            String suku = SukunimiTB.Text;
+            String ktj = KayttajaTB.Text;
+            String oso = OsoiteTB.Text;
+            String posnum = PnumTB.Text;
+            String ppaik = PtPaikkaTB.Text;
+            String sala = SalasanaTB.Text;
 
-            if (bok.Trim().Equals("") || author.Trim().Equals("") || noc.Equals(""))
+            if (etu.Trim().Equals("") || suku.Trim().Equals("") || ktj.Trim().Equals("") || oso.Trim().Equals("") || posnum.Trim().Equals("") || ppaik.Trim().Equals("") || sala.Trim().Equals(""))
             {
-                MessageBox.Show("Error, All fields must be filled", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Error, Täytä kaikki kentät jatkaaksesi", "Tyhjä kenttä", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                Boolean addNewBook = book.addBook(bok, author, noc);
-                if (addNewBook)
+                Boolean addNewAsiakas = ASIAKAS.addAsiakas(ktj, etu, suku, oso, posnum, ppaik, sala);
+                if (addNewAsiakas)
                 {
-                    MessageBox.Show("New book added to library", "Add new book", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Uusi asiakas lisätty!", "Asiakkaan lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Could not add new book", "Adding failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Asiakasta ei pystytty lisäämään", "Asiakkaan lisäys epäonnistui", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            bookDG.DataSource = book.getBooks();
+            AsiakkaatDG.DataSource = ASIAKAS.getAsiakkaat();
         }
 
-        private void updateBT_Click(object sender, EventArgs e)
+        private void MuokAsBT_Click(object sender, EventArgs e)
         {
-            String bok = bookTB.Text;
-            String author = authorTB.Text;
-            int noc = Int32.Parse(nocTB.Text);
-            int id = Int32.Parse(bid.Text);
+            String etu = EtunimiTB.Text;
+            String suku = SukunimiTB.Text;
+            String ktj = KayttajaTB.Text;
+            String oso = OsoiteTB.Text;
+            String posnum = PnumTB.Text;
+            String ppaik = PtPaikkaTB.Text;
+            String sala = SalasanaTB.Text;
 
-            if (bid.Equals("") || bok.Trim().Equals("") || author.Trim().Equals("") || noc.Equals(""))
+            if (etu.Trim().Equals("") || suku.Trim().Equals("") || ktj.Trim().Equals("") || oso.Trim().Equals("") || posnum.Trim().Equals("") || ppaik.Trim().Equals("") || sala.Trim().Equals(""))
             {
-                MessageBox.Show("Error, All fields must be filled", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Error, Täytä kaikki kentät jatkaaksesi", "Tyhjä kenttä", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                Boolean addNewBook = book.editBook(id, bok, author, noc);
-                if (addNewBook)
+                Boolean addNewAsiakas = ASIAKAS.editAsiakas(ktj, etu, suku, oso, posnum, ppaik, sala);
+                if (addNewAsiakas)
                 {
-                    MessageBox.Show("Book updated succesfully", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Asiakas päivitetty onnistuneesti", "Päivitys", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Could not update book", "Update failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Asiakkaan päivitys epäonnistui", "Päivitys epäonnistui", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            bookDG.DataSource = book.getBooks();
+            AsiakkaatDG.DataSource = ASIAKAS.getAsiakkaat();
         }
 
-        private void bookDG_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void AsiakkaatDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            bid.Text = bookDG.CurrentRow.Cells[0].Value.ToString();
-            bookTB.Text = bookDG.CurrentRow.Cells[1].Value.ToString();
-            authorTB.Text = bookDG.CurrentRow.Cells[2].Value.ToString();
-            nocTB.Text = bookDG.CurrentRow.Cells[3].Value.ToString();
+            EtunimiTB.Text = AsiakkaatDG.CurrentRow.Cells[0].Value.ToString();
+            SukunimiTB.Text = AsiakkaatDG.CurrentRow.Cells[1].Value.ToString();
+            KayttajaTB.Text = AsiakkaatDG.CurrentRow.Cells[2].Value.ToString();
+            OsoiteTB.Text = AsiakkaatDG.CurrentRow.Cells[3].Value.ToString();
+            PnumTB.Text = AsiakkaatDG.CurrentRow.Cells[4].Value.ToString();
+            PtPaikkaTB.Text = AsiakkaatDG.CurrentRow.Cells[5].Value.ToString();
+            SalasanaTB.Text = AsiakkaatDG.CurrentRow.Cells[6].Value.ToString();
         }
-        private void deleteBT_Click(object sender, EventArgs e)
+        private void PoisAsBT_Click(object sender, EventArgs e)
         {
-            String username = bid.Text;
-            if (book.deleteBook(username))
+            String kayttajanimi = KayttajaTB.Text;
+            if (ASIAKAS.deleteAsiakas(kayttajanimi))
             {
-                bookDG.DataSource = book.getBooks();
-                MessageBox.Show("Book deleted succesfully", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AsiakkaatDG.DataSource = ASIAKAS.getAsiakkaat();
+                MessageBox.Show("Asiakas on poistettu", "Poisto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Could not delete book", "Delete failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Asiakasta ei voida poistaa", "Poisto epäonnistui", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            clearBT.PerformClick();
+            TyhjAsBT.PerformClick();
 
         }
-    }
-}
     }
 }
