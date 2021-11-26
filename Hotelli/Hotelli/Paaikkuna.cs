@@ -31,7 +31,8 @@ namespace Hotelli
 
         private void ikkunaKolme_Click(object sender, EventArgs e)
         {
-
+            HuoneidenHallinta huoneet = new HuoneidenHallinta();
+            huoneet.Show(); 
         }
     }
 }

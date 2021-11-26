@@ -70,8 +70,8 @@ namespace Hotelli
             // ikkunaKolme
             // 
             this.ikkunaKolme.Name = "ikkunaKolme";
-            this.ikkunaKolme.Size = new System.Drawing.Size(92, 32);
-            this.ikkunaKolme.Text = "ikkuna3";
+            this.ikkunaKolme.Size = new System.Drawing.Size(189, 32);
+            this.ikkunaKolme.Text = "Huoneiden hallinta";
             this.ikkunaKolme.Click += new System.EventHandler(this.ikkunaKolme_Click);
             // 
             // pictureBox1

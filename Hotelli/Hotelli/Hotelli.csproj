@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HuoneidenHallinta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HuoneidenHallinta.Designer.cs">
+      <DependentUpon>HuoneidenHallinta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Paaikkuna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HuoneidenHallinta.resx">
+      <DependentUpon>HuoneidenHallinta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Paaikkuna.resx">
       <DependentUpon>Paaikkuna.cs</DependentUpon>
