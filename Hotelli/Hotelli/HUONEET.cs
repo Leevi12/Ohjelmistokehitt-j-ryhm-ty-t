@@ -3,14 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Hotelli
 {
     class HUONEET
     {
-        public bool lisaaHuone(int hnro, int hntyyppi, string puh, string vapaa)
-        {
+        Yhdista yhteys = new Yhdista();
 
+        public bool lisaaHuone(int hnro, int hnTyyppi, string puh, string vapaa)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            string lisaaJuttu = "INSERT INTO huoneet (huoneNro, huoneTyyppi, puhelin, vapaa) VALUES (@hnr, @hty, @puh, @vap)";
+            komento.CommandText = lisaaJuttu;
+            komento.Connection = yhteys.otaYhteys();
+
+            komento.Parameters.Add("@hnr", MySqlDbType.Int32).Value = hnro;
+            komento.Parameters.Add("@hty", MySqlDbType.Int32).Value = hnTyyppi;
+            komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puh;
+            komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaa;
+
+            yhteys.avaaYhteys();
+            try
+            {
+                if (komento.ExecuteNonQuery() == 1)
+                {
+                    yhteys.suljeYhteys();
+                    return true;
+                }
+                else
+                {
+                    yhteys.suljeYhteys();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Virhe: " + ex);
+                return true;
+            }
         }
     }
 }
