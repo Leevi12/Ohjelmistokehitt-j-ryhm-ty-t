@@ -63,8 +63,8 @@ namespace Hotelli
             // ikkunaKaksi
             // 
             this.ikkunaKaksi.Name = "ikkunaKaksi";
-            this.ikkunaKaksi.Size = new System.Drawing.Size(92, 32);
-            this.ikkunaKaksi.Text = "ikkuna2";
+            this.ikkunaKaksi.Size = new System.Drawing.Size(107, 32);
+            this.ikkunaKaksi.Text = "Asiakkaat";
             this.ikkunaKaksi.Click += new System.EventHandler(this.ikkunaKaksi_Click);
             // 
             // ikkunaKolme

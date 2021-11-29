@@ -32,6 +32,24 @@ namespace Hotelli
             {
                 MessageBox.Show("Huonetta ei pystytty lisäämään", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            HuoneetDG.DataSource = huone.haeHuoneet();
+        }
+
+        private void HuoneidenHallinta_Load(object sender, EventArgs e)
+        {
+            HuoneetDG.DataSource = huone.haeHuoneet();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HuoneTyyppiCB.SelectedIndex = 0;
+            PuhelinTB.Text = "";
+        }
+
+        private void HuoneetDG_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HuoneTyyppiCB.SelectedItem = HuoneetDG.CurrentRow.Cells[1].Value.ToString();
+            PuhelinTB.Text = HuoneetDG.CurrentRow.Cells[2].Value.ToString();
         }
     }
 }

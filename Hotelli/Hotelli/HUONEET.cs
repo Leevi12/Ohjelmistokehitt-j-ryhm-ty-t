@@ -13,6 +13,17 @@ namespace Hotelli
     {
         Yhdista yhteys = new Yhdista();
 
+        public DataTable haeHuoneet()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM huoneet", yhteys.otaYhteys());
+            MySqlDataAdapter adap = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adap.SelectCommand = komento;
+            adap.Fill(taulu);
+            return taulu;
+        }
+
         public bool lisaaHuone(string hnTyyppi, string puh, string vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
@@ -43,6 +54,33 @@ namespace Hotelli
                 MessageBox.Show("Virhe: " + ex);
                 return true;
             }
+        }
+
+        public bool poistaHuone(string hnro)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            string poisto = "DELETE FROM huoneet WHERE huoneNro = @hno";
+            komento.CommandText = poisto;
+            komento.Connection = yhteys.otaYhteys();
+
+            komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
+
+            if (komento.ExecuteNonQuery() == 1)
+            {
+                yhteys.suljeYhteys();
+                return true;
+            }
+            else
+            {
+                yhteys.suljeYhteys();
+                return false;
+            }
+        }
+
+        public bool muokkaHuone(int hnro, int htyyppi, string puh, string vap)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            return true;
         }
     }
 }
