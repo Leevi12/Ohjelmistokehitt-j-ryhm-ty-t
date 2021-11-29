@@ -26,7 +26,8 @@ namespace Hotelli
 
         private void ikkunaKaksi_Click(object sender, EventArgs e)
         {
-
+            Asiakkaat asi = new Asiakkaat();
+            asi.Show();
         }
 
         private void ikkunaKolme_Click(object sender, EventArgs e)
