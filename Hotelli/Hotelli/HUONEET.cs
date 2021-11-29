@@ -52,11 +52,11 @@ namespace Hotelli
             catch (Exception ex)
             {
                 MessageBox.Show("Virhe: " + ex);
-                return true;
+                return false;
             }
         }
 
-        public bool poistaHuone(string hnro)
+        public bool poistaHuone(int hnro)
         {
             MySqlCommand komento = new MySqlCommand();
             string poisto = "DELETE FROM huoneet WHERE huoneNro = @hno";
@@ -64,7 +64,7 @@ namespace Hotelli
             komento.Connection = yhteys.otaYhteys();
 
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
-
+            yhteys.avaaYhteys();
             if (komento.ExecuteNonQuery() == 1)
             {
                 yhteys.suljeYhteys();
@@ -77,10 +77,37 @@ namespace Hotelli
             }
         }
 
-        public bool muokkaHuone(int hnro, int htyyppi, string puh, string vap)
+        public bool muokkaHuone(int hnro, string htyyppi, string puh, string vap)
         {
             MySqlCommand komento = new MySqlCommand();
-            return true;
+            string muokkaaJuttu = "UPDATE huoneet SET huoneTyyppi = @hnt, puhelin = @puh, vapaa = @vap WHERE huoneNro = @hro";
+            komento.CommandText = muokkaaJuttu;
+            komento.Connection = yhteys.otaYhteys();
+
+            komento.Parameters.Add("@hro", MySqlDbType.VarChar).Value = hnro;
+            komento.Parameters.Add("@hnt", MySqlDbType.VarChar).Value = htyyppi;
+            komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puh;
+            komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vap;
+
+            yhteys.avaaYhteys();
+            try
+            {
+                if (komento.ExecuteNonQuery() == 1)
+                {
+                    yhteys.suljeYhteys();
+                    return true;
+                }
+                else
+                {
+                    yhteys.suljeYhteys();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Virhe: " + ex);
+                return false;
+            }
         }
     }
 }
