@@ -30,10 +30,8 @@ namespace Hotelli
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.HuoneNoTB = new System.Windows.Forms.TextBox();
             this.PuhelinTB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.HuoneTyyppiCB = new System.Windows.Forms.ComboBox();
@@ -59,21 +57,11 @@ namespace Hotelli
             this.label1.TabIndex = 0;
             this.label1.Text = "Huoneiden Hallinta";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 22);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Huoneen numero:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 178);
+            this.label3.Location = new System.Drawing.Point(45, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 22);
             this.label3.TabIndex = 2;
@@ -83,24 +71,16 @@ namespace Hotelli
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(48, 226);
+            this.label4.Location = new System.Drawing.Point(48, 184);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 22);
             this.label4.TabIndex = 3;
             this.label4.Text = "Puhelin:";
             // 
-            // HuoneNoTB
-            // 
-            this.HuoneNoTB.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HuoneNoTB.Location = new System.Drawing.Point(210, 129);
-            this.HuoneNoTB.Name = "HuoneNoTB";
-            this.HuoneNoTB.Size = new System.Drawing.Size(151, 32);
-            this.HuoneNoTB.TabIndex = 4;
-            // 
             // PuhelinTB
             // 
             this.PuhelinTB.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PuhelinTB.Location = new System.Drawing.Point(210, 223);
+            this.PuhelinTB.Location = new System.Drawing.Point(210, 181);
             this.PuhelinTB.Name = "PuhelinTB";
             this.PuhelinTB.Size = new System.Drawing.Size(151, 32);
             this.PuhelinTB.TabIndex = 6;
@@ -109,7 +89,7 @@ namespace Hotelli
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(48, 273);
+            this.label5.Location = new System.Drawing.Point(48, 239);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 22);
             this.label5.TabIndex = 7;
@@ -123,7 +103,7 @@ namespace Hotelli
             "1H",
             "2H",
             "2H+K"});
-            this.HuoneTyyppiCB.Location = new System.Drawing.Point(210, 175);
+            this.HuoneTyyppiCB.Location = new System.Drawing.Point(210, 134);
             this.HuoneTyyppiCB.Name = "HuoneTyyppiCB";
             this.HuoneTyyppiCB.Size = new System.Drawing.Size(151, 30);
             this.HuoneTyyppiCB.TabIndex = 9;
@@ -132,7 +112,7 @@ namespace Hotelli
             // 
             this.KyllaRB.AutoSize = true;
             this.KyllaRB.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KyllaRB.Location = new System.Drawing.Point(210, 273);
+            this.KyllaRB.Location = new System.Drawing.Point(210, 239);
             this.KyllaRB.Name = "KyllaRB";
             this.KyllaRB.Size = new System.Drawing.Size(80, 26);
             this.KyllaRB.TabIndex = 10;
@@ -144,7 +124,7 @@ namespace Hotelli
             // 
             this.EiRB.AutoSize = true;
             this.EiRB.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EiRB.Location = new System.Drawing.Point(318, 273);
+            this.EiRB.Location = new System.Drawing.Point(318, 239);
             this.EiRB.Name = "EiRB";
             this.EiRB.Size = new System.Drawing.Size(43, 26);
             this.EiRB.TabIndex = 11;
@@ -155,16 +135,16 @@ namespace Hotelli
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(513, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(400, 99);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(475, 313);
+            this.dataGridView1.Size = new System.Drawing.Size(588, 313);
             this.dataGridView1.TabIndex = 12;
             // 
             // UusiHuoneBT
             // 
             this.UusiHuoneBT.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UusiHuoneBT.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.UusiHuoneBT.Location = new System.Drawing.Point(46, 310);
+            this.UusiHuoneBT.Location = new System.Drawing.Point(52, 310);
             this.UusiHuoneBT.MinimumSize = new System.Drawing.Size(0, 41);
             this.UusiHuoneBT.Name = "UusiHuoneBT";
             this.UusiHuoneBT.Size = new System.Drawing.Size(164, 41);
@@ -177,7 +157,7 @@ namespace Hotelli
             // 
             this.button2.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(175, 369);
+            this.button2.Location = new System.Drawing.Point(52, 369);
             this.button2.MinimumSize = new System.Drawing.Size(0, 41);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 41);
@@ -189,7 +169,7 @@ namespace Hotelli
             // 
             this.button3.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(49, 369);
+            this.button3.Location = new System.Drawing.Point(260, 310);
             this.button3.MinimumSize = new System.Drawing.Size(0, 41);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(101, 41);
@@ -201,7 +181,7 @@ namespace Hotelli
             // 
             this.button4.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Location = new System.Drawing.Point(299, 369);
+            this.button4.Location = new System.Drawing.Point(194, 371);
             this.button4.MinimumSize = new System.Drawing.Size(0, 41);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(167, 41);
@@ -225,10 +205,8 @@ namespace Hotelli
             this.Controls.Add(this.HuoneTyyppiCB);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.PuhelinTB);
-            this.Controls.Add(this.HuoneNoTB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Gadugi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -243,10 +221,8 @@ namespace Hotelli
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox HuoneNoTB;
         private System.Windows.Forms.TextBox PuhelinTB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox HuoneTyyppiCB;

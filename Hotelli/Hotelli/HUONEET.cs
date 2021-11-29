@@ -13,15 +13,14 @@ namespace Hotelli
     {
         Yhdista yhteys = new Yhdista();
 
-        public bool lisaaHuone(int hnro, int hnTyyppi, string puh, string vapaa)
+        public bool lisaaHuone(string hnTyyppi, string puh, string vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
-            string lisaaJuttu = "INSERT INTO huoneet (huoneNro, huoneTyyppi, puhelin, vapaa) VALUES (@hnr, @hty, @puh, @vap)";
+            string lisaaJuttu = "INSERT INTO huoneet (huoneTyyppi, puhelin, vapaa) VALUES (@hty, @puh, @vap)";
             komento.CommandText = lisaaJuttu;
             komento.Connection = yhteys.otaYhteys();
 
-            komento.Parameters.Add("@hnr", MySqlDbType.Int32).Value = hnro;
-            komento.Parameters.Add("@hty", MySqlDbType.Int32).Value = hnTyyppi;
+            komento.Parameters.Add("@hty", MySqlDbType.VarChar).Value = hnTyyppi;
             komento.Parameters.Add("@puh", MySqlDbType.VarChar).Value = puh;
             komento.Parameters.Add("@vap", MySqlDbType.VarChar).Value = vapaa;
 

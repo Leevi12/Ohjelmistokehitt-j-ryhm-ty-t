@@ -16,17 +16,21 @@ namespace Hotelli
         public HuoneidenHallinta()
         {
             InitializeComponent();
+            HuoneTyyppiCB.SelectedIndex = 0;
         }
 
         private void UusiHuoneBT_Click(object sender, EventArgs e)
         {
-            int num = Convert.ToInt32(HuoneNoTB.Text);
-            int tyyppi = Convert.ToInt32(HuoneTyyppiCB.SelectedValue.ToString());
+            string tyyppi = HuoneTyyppiCB.SelectedItem.ToString();
             string puh = PuhelinTB.Text;
 
-            if (huone.lisaaHuone(num, tyyppi, puh, "Kyllä"))
+            if (huone.lisaaHuone(tyyppi, puh, "Kyllä"))
             {
                 MessageBox.Show("Huone lisätty onnistuneesti", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Huonetta ei pystytty lisäämään", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
