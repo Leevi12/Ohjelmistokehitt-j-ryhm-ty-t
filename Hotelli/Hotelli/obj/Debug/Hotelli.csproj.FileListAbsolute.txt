@@ -24,3 +24,15 @@ C:\Users\kaure\source\repos\Ohjelmointi2\HotelliRyhmaTyo\OhjelmistokehittajaRyhm
 C:\Users\kaure\source\repos\Ohjelmointi2\HotelliRyhmaTyo\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.csproj.CoreCompileInputs.cache
 C:\Users\kaure\source\repos\Ohjelmointi2\HotelliRyhmaTyo\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.exe
 C:\Users\kaure\source\repos\Ohjelmointi2\HotelliRyhmaTyo\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.pdb
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.csproj.AssemblyReference.cache
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.exe.config
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.Asiakkaat.resources
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.Form1.resources
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.HuoneidenHallinta.resources
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.Paaikkuna.resources
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.Properties.Resources.resources
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.Varaukset.resources
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.csproj.GenerateResource.cache
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.csproj.CoreCompileInputs.cache
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.exe
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.pdb

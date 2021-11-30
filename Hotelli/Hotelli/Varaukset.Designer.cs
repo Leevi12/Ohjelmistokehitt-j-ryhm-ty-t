@@ -29,7 +29,7 @@ namespace Hotelli
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.VarauksetDG = new System.Windows.Forms.DataGridView();
             this.PoisVrBT = new System.Windows.Forms.Button();
             this.MuokVrBT = new System.Windows.Forms.Button();
             this.TallVrBT = new System.Windows.Forms.Button();
@@ -40,24 +40,24 @@ namespace Hotelli
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.KtjTunnusVrTB = new System.Windows.Forms.TextBox();
             this.VrNumeroTB = new System.Windows.Forms.TextBox();
             this.HuoneNroTB = new System.Windows.Forms.TextBox();
-            this.SisaanTB = new System.Windows.Forms.TextBox();
-            this.UlosTB = new System.Windows.Forms.TextBox();
-            this.AsNumTB = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SisaanDTP = new System.Windows.Forms.DateTimePicker();
+            this.UlosDTP = new System.Windows.Forms.DateTimePicker();
+            this.HuoTyypCB = new System.Windows.Forms.ComboBox();
+            this.AsiakasCB = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.VarauksetDG)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // VarauksetDG
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 252);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1149, 239);
-            this.dataGridView1.TabIndex = 0;
+            this.VarauksetDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VarauksetDG.Location = new System.Drawing.Point(15, 252);
+            this.VarauksetDG.Name = "VarauksetDG";
+            this.VarauksetDG.RowHeadersWidth = 62;
+            this.VarauksetDG.RowTemplate.Height = 28;
+            this.VarauksetDG.Size = new System.Drawing.Size(1149, 239);
+            this.VarauksetDG.TabIndex = 0;
             // 
             // PoisVrBT
             // 
@@ -98,16 +98,16 @@ namespace Hotelli
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 69);
+            this.label1.Location = new System.Drawing.Point(23, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 20);
+            this.label1.Size = new System.Drawing.Size(101, 20);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Asiakkaan käyttäjätunnus:";
+            this.label1.Text = "Huonetyyppi:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 120);
+            this.label2.Location = new System.Drawing.Point(23, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 20;
@@ -143,22 +143,15 @@ namespace Hotelli
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 15);
+            this.label7.Location = new System.Drawing.Point(23, 75);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 20);
+            this.label7.Size = new System.Drawing.Size(69, 20);
             this.label7.TabIndex = 25;
-            this.label7.Text = "Asiakasnumero:";
-            // 
-            // KtjTunnusVrTB
-            // 
-            this.KtjTunnusVrTB.Location = new System.Drawing.Point(321, 66);
-            this.KtjTunnusVrTB.Name = "KtjTunnusVrTB";
-            this.KtjTunnusVrTB.Size = new System.Drawing.Size(208, 26);
-            this.KtjTunnusVrTB.TabIndex = 26;
+            this.label7.Text = "Asiakas:";
             // 
             // VrNumeroTB
             // 
-            this.VrNumeroTB.Location = new System.Drawing.Point(321, 117);
+            this.VrNumeroTB.Location = new System.Drawing.Point(321, 21);
             this.VrNumeroTB.Name = "VrNumeroTB";
             this.VrNumeroTB.Size = new System.Drawing.Size(208, 26);
             this.VrNumeroTB.TabIndex = 27;
@@ -170,54 +163,62 @@ namespace Hotelli
             this.HuoneNroTB.Size = new System.Drawing.Size(208, 26);
             this.HuoneNroTB.TabIndex = 29;
             // 
-            // SisaanTB
+            // SisaanDTP
             // 
-            this.SisaanTB.Location = new System.Drawing.Point(735, 69);
-            this.SisaanTB.Name = "SisaanTB";
-            this.SisaanTB.Size = new System.Drawing.Size(208, 26);
-            this.SisaanTB.TabIndex = 30;
+            this.SisaanDTP.Location = new System.Drawing.Point(735, 75);
+            this.SisaanDTP.Name = "SisaanDTP";
+            this.SisaanDTP.Size = new System.Drawing.Size(208, 26);
+            this.SisaanDTP.TabIndex = 38;
             // 
-            // UlosTB
+            // UlosDTP
             // 
-            this.UlosTB.Location = new System.Drawing.Point(735, 118);
-            this.UlosTB.Name = "UlosTB";
-            this.UlosTB.Size = new System.Drawing.Size(208, 26);
-            this.UlosTB.TabIndex = 31;
+            this.UlosDTP.Location = new System.Drawing.Point(735, 121);
+            this.UlosDTP.Name = "UlosDTP";
+            this.UlosDTP.Size = new System.Drawing.Size(208, 26);
+            this.UlosDTP.TabIndex = 39;
             // 
-            // AsNumTB
+            // HuoTyypCB
             // 
-            this.AsNumTB.Enabled = false;
-            this.AsNumTB.Location = new System.Drawing.Point(321, 8);
-            this.AsNumTB.Name = "AsNumTB";
-            this.AsNumTB.Size = new System.Drawing.Size(208, 26);
-            this.AsNumTB.TabIndex = 37;
+            this.HuoTyypCB.FormattingEnabled = true;
+            this.HuoTyypCB.Location = new System.Drawing.Point(321, 121);
+            this.HuoTyypCB.Name = "HuoTyypCB";
+            this.HuoTyypCB.Size = new System.Drawing.Size(208, 28);
+            this.HuoTyypCB.TabIndex = 40;
+            // 
+            // AsiakasCB
+            // 
+            this.AsiakasCB.FormattingEnabled = true;
+            this.AsiakasCB.Location = new System.Drawing.Point(321, 66);
+            this.AsiakasCB.Name = "AsiakasCB";
+            this.AsiakasCB.Size = new System.Drawing.Size(208, 28);
+            this.AsiakasCB.TabIndex = 41;
             // 
             // Varaukset
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 521);
-            this.Controls.Add(this.AsNumTB);
+            this.Controls.Add(this.AsiakasCB);
+            this.Controls.Add(this.HuoTyypCB);
+            this.Controls.Add(this.UlosDTP);
+            this.Controls.Add(this.SisaanDTP);
             this.Controls.Add(this.PoisVrBT);
             this.Controls.Add(this.MuokVrBT);
             this.Controls.Add(this.TallVrBT);
             this.Controls.Add(this.TyhjVrBT);
-            this.Controls.Add(this.UlosTB);
-            this.Controls.Add(this.SisaanTB);
             this.Controls.Add(this.HuoneNroTB);
             this.Controls.Add(this.VrNumeroTB);
-            this.Controls.Add(this.KtjTunnusVrTB);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.VarauksetDG);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Name = "Varaukset";
             this.Text = "Varaukset";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VarauksetDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,7 +226,7 @@ namespace Hotelli
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView VarauksetDG;
         private System.Windows.Forms.Button PoisVrBT;
         private System.Windows.Forms.Button MuokVrBT;
         private System.Windows.Forms.Button TallVrBT;
@@ -236,11 +237,11 @@ namespace Hotelli
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox KtjTunnusVrTB;
         private System.Windows.Forms.TextBox VrNumeroTB;
         private System.Windows.Forms.TextBox HuoneNroTB;
-        private System.Windows.Forms.TextBox SisaanTB;
-        private System.Windows.Forms.TextBox UlosTB;
-        private System.Windows.Forms.TextBox AsNumTB;
+        private System.Windows.Forms.DateTimePicker SisaanDTP;
+        private System.Windows.Forms.DateTimePicker UlosDTP;
+        private System.Windows.Forms.ComboBox HuoTyypCB;
+        private System.Windows.Forms.ComboBox AsiakasCB;
     }
 }
