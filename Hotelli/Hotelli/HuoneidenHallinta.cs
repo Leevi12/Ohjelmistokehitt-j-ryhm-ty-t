@@ -37,6 +37,7 @@ namespace Hotelli
 
         private void HuoneidenHallinta_Load(object sender, EventArgs e)
         {
+            HuoneetDG.ForeColor = System.Drawing.Color.Black;
             HuoneetDG.DataSource = huone.haeHuoneet();
         }
 

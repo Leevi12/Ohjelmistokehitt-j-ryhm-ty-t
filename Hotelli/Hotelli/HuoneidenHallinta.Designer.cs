@@ -136,6 +136,7 @@ namespace Hotelli
             // 
             // HuoneetDG
             // 
+            this.HuoneetDG.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.HuoneetDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.HuoneetDG.Location = new System.Drawing.Point(400, 99);
             this.HuoneetDG.Name = "HuoneetDG";
@@ -235,7 +236,7 @@ namespace Hotelli
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Gadugi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.Name = "HuoneidenHallinta";
             this.Text = "HuoneidenHallinta";
             this.Load += new System.EventHandler(this.HuoneidenHallinta_Load);
