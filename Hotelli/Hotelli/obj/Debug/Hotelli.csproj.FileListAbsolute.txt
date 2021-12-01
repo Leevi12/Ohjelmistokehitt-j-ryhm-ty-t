@@ -35,4 +35,21 @@ C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Deb
 C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.csproj.CoreCompileInputs.cache
 C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.exe
 C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.pdb
+<<<<<<< HEAD
 C:\Users\kaure\source\repos\Ohjelmointi2\HotelliRyhmaTyo\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\obj\Debug\Hotelli.Varaukset.resources
+=======
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\Hotelli.exe.config
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\Hotelli.exe
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\Hotelli.pdb
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\Google.Protobuf.dll
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\ZstdNet.dll
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\System.Memory.dll
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\System.Buffers.dll
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\leevi\source\repos\OhjelmistokehittajaRyhmatyot\Hotelli\Hotelli\bin\Debug\MySql.Data.xml
+>>>>>>> 053c6921f911ee518e7cd518221408681e2178c6

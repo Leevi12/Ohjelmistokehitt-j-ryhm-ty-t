@@ -41,11 +41,11 @@ namespace Hotelli
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.VrNumeroTB = new System.Windows.Forms.TextBox();
-            this.HuoneNroTB = new System.Windows.Forms.TextBox();
             this.SisaanDTP = new System.Windows.Forms.DateTimePicker();
             this.UlosDTP = new System.Windows.Forms.DateTimePicker();
-            this.HuoTyypCB = new System.Windows.Forms.ComboBox();
+            this.HuoneTyyppiCB = new System.Windows.Forms.ComboBox();
             this.AsiakasCB = new System.Windows.Forms.ComboBox();
+            this.HuoneNroCB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.VarauksetDG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,13 +156,6 @@ namespace Hotelli
             this.VrNumeroTB.Size = new System.Drawing.Size(208, 26);
             this.VrNumeroTB.TabIndex = 27;
             // 
-            // HuoneNroTB
-            // 
-            this.HuoneNroTB.Location = new System.Drawing.Point(735, 15);
-            this.HuoneNroTB.Name = "HuoneNroTB";
-            this.HuoneNroTB.Size = new System.Drawing.Size(208, 26);
-            this.HuoneNroTB.TabIndex = 29;
-            // 
             // SisaanDTP
             // 
             this.SisaanDTP.Location = new System.Drawing.Point(735, 75);
@@ -177,13 +170,13 @@ namespace Hotelli
             this.UlosDTP.Size = new System.Drawing.Size(208, 26);
             this.UlosDTP.TabIndex = 39;
             // 
-            // HuoTyypCB
+            // HuoneTyyppiCB
             // 
-            this.HuoTyypCB.FormattingEnabled = true;
-            this.HuoTyypCB.Location = new System.Drawing.Point(321, 121);
-            this.HuoTyypCB.Name = "HuoTyypCB";
-            this.HuoTyypCB.Size = new System.Drawing.Size(208, 28);
-            this.HuoTyypCB.TabIndex = 40;
+            this.HuoneTyyppiCB.FormattingEnabled = true;
+            this.HuoneTyyppiCB.Location = new System.Drawing.Point(321, 121);
+            this.HuoneTyyppiCB.Name = "HuoneTyyppiCB";
+            this.HuoneTyyppiCB.Size = new System.Drawing.Size(208, 28);
+            this.HuoneTyyppiCB.TabIndex = 40;
             // 
             // AsiakasCB
             // 
@@ -193,20 +186,28 @@ namespace Hotelli
             this.AsiakasCB.Size = new System.Drawing.Size(208, 28);
             this.AsiakasCB.TabIndex = 41;
             // 
+            // HuoneNroCB
+            // 
+            this.HuoneNroCB.FormattingEnabled = true;
+            this.HuoneNroCB.Location = new System.Drawing.Point(735, 12);
+            this.HuoneNroCB.Name = "HuoneNroCB";
+            this.HuoneNroCB.Size = new System.Drawing.Size(208, 28);
+            this.HuoneNroCB.TabIndex = 42;
+            // 
             // Varaukset
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 521);
+            this.Controls.Add(this.HuoneNroCB);
             this.Controls.Add(this.AsiakasCB);
-            this.Controls.Add(this.HuoTyypCB);
+            this.Controls.Add(this.HuoneTyyppiCB);
             this.Controls.Add(this.UlosDTP);
             this.Controls.Add(this.SisaanDTP);
             this.Controls.Add(this.PoisVrBT);
             this.Controls.Add(this.MuokVrBT);
             this.Controls.Add(this.TallVrBT);
             this.Controls.Add(this.TyhjVrBT);
-            this.Controls.Add(this.HuoneNroTB);
             this.Controls.Add(this.VrNumeroTB);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -238,10 +239,10 @@ namespace Hotelli
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox VrNumeroTB;
-        private System.Windows.Forms.TextBox HuoneNroTB;
         private System.Windows.Forms.DateTimePicker SisaanDTP;
         private System.Windows.Forms.DateTimePicker UlosDTP;
-        private System.Windows.Forms.ComboBox HuoTyypCB;
+        private System.Windows.Forms.ComboBox HuoneTyyppiCB;
         private System.Windows.Forms.ComboBox AsiakasCB;
+        private System.Windows.Forms.ComboBox HuoneNroCB;
     }
 }
