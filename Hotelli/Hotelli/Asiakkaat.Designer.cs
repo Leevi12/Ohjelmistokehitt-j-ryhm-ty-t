@@ -175,7 +175,7 @@ namespace Hotelli
             // 
             // TyhjAsBT
             // 
-            this.TyhjAsBT.Location = new System.Drawing.Point(33, 191);
+            this.TyhjAsBT.Location = new System.Drawing.Point(419, 191);
             this.TyhjAsBT.Name = "TyhjAsBT";
             this.TyhjAsBT.Size = new System.Drawing.Size(82, 33);
             this.TyhjAsBT.TabIndex = 15;
@@ -184,7 +184,7 @@ namespace Hotelli
             // 
             // TallAsBT
             // 
-            this.TallAsBT.Location = new System.Drawing.Point(172, 191);
+            this.TallAsBT.Location = new System.Drawing.Point(53, 191);
             this.TallAsBT.Name = "TallAsBT";
             this.TallAsBT.Size = new System.Drawing.Size(82, 33);
             this.TallAsBT.TabIndex = 16;
@@ -193,7 +193,7 @@ namespace Hotelli
             // 
             // MuokAsBT
             // 
-            this.MuokAsBT.Location = new System.Drawing.Point(311, 191);
+            this.MuokAsBT.Location = new System.Drawing.Point(174, 191);
             this.MuokAsBT.Name = "MuokAsBT";
             this.MuokAsBT.Size = new System.Drawing.Size(82, 33);
             this.MuokAsBT.TabIndex = 17;
@@ -202,7 +202,7 @@ namespace Hotelli
             // 
             // PoisAsBT
             // 
-            this.PoisAsBT.Location = new System.Drawing.Point(448, 191);
+            this.PoisAsBT.Location = new System.Drawing.Point(297, 191);
             this.PoisAsBT.Name = "PoisAsBT";
             this.PoisAsBT.Size = new System.Drawing.Size(82, 33);
             this.PoisAsBT.TabIndex = 18;

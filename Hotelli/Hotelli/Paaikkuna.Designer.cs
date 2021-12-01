@@ -56,8 +56,8 @@ namespace Hotelli
             // ikkunaYksi
             // 
             this.ikkunaYksi.Name = "ikkunaYksi";
-            this.ikkunaYksi.Size = new System.Drawing.Size(92, 32);
-            this.ikkunaYksi.Text = "ikkuna1";
+            this.ikkunaYksi.Size = new System.Drawing.Size(108, 32);
+            this.ikkunaYksi.Text = "Varaukset";
             this.ikkunaYksi.Click += new System.EventHandler(this.ikkunaYksi_Click);
             // 
             // ikkunaKaksi
@@ -70,8 +70,8 @@ namespace Hotelli
             // ikkunaKolme
             // 
             this.ikkunaKolme.Name = "ikkunaKolme";
-            this.ikkunaKolme.Size = new System.Drawing.Size(189, 32);
-            this.ikkunaKolme.Text = "Huoneiden hallinta";
+            this.ikkunaKolme.Size = new System.Drawing.Size(99, 32);
+            this.ikkunaKolme.Text = "Huoneet";
             this.ikkunaKolme.Click += new System.EventHandler(this.ikkunaKolme_Click);
             // 
             // pictureBox1

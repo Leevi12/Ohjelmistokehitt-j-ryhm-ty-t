@@ -19,9 +19,8 @@ namespace Hotelli
 
         private void ikkunaYksi_Click(object sender, EventArgs e)
         {
-            Form1 formi = new Form1();
-            formi.Show();
-            // example
+            Varaukset var = new Varaukset();
+            var.Show();
         }
 
         private void ikkunaKaksi_Click(object sender, EventArgs e)
