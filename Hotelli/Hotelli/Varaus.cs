@@ -95,7 +95,7 @@ namespace Hotelli
                 return false;
             }
         }
-        public bool deleteVaraus(int varausnro)
+        public bool deleteVaraus(String varausnro)
         {
             MySqlCommand komento = new MySqlCommand();
             String deleting = "DELETE FROM varaukset WHERE VarausNro = @vnro";

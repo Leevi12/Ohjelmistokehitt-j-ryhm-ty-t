@@ -72,10 +72,55 @@ namespace Hotelli
             {
                 int vara = Convert.ToInt32(VrNumeroTB.Text);
 
-                if (varaus.editVaraus(huone, asiakas, sisaan, ulos, vara))
+                if (varaus.editVaraus(vara, huone, asiakas, sisaan, ulos))
                 {
                     MessageBox.Show("Huone muokattu onnistuneesti", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Huoneen muokkaus", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Virhe: "+ ex.Message, "Huoneen numero virhe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            VarauksetDG.DataSource = varaus.haeVaraukset();
+        }
+
+        private void VarauksetDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void VarauksetDG_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            VrNumeroTB.Text = VarauksetDG.CurrentRow.Cells[0].Value.ToString();
+            AsiakasCB.Text = VarauksetDG.CurrentRow.Cells[1].Value.ToString();
+            HuoneNroCB.Text = VarauksetDG.CurrentRow.Cells[2].Value.ToString();
+            SisaanDTP.Text = VarauksetDG.CurrentRow.Cells[3].Value.ToString();
+            UlosDTP.Text = VarauksetDG.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void PoisVrBT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String varausnro = VrNumeroTB.Text;
+                if (varaus.deleteVaraus(varausnro))
+                {
+                    VarauksetDG.DataSource = varaus.haeVaraukset();
+                    MessageBox.Show("Varaus poistettu onnistuneesti", "Varauksen poisto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Varauksen poisto epäonnistui", "Varauksen poisto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                TyhjVrBT.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Virhe " + ex);
             }
         }
     }
