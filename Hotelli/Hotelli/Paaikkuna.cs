@@ -16,19 +16,6 @@ namespace Hotelli
         {
             InitializeComponent();
         }
-
-        private void ikkunaYksi_Click(object sender, EventArgs e)
-        {
-<<<<<<< HEAD
-            Varaukset var = new Varaukset();
-            var.Show();
-=======
-            Varaukset vr = new Varaukset();
-            vr.Show();
-            
->>>>>>> 053c6921f911ee518e7cd518221408681e2178c6
-        }
-
         private void ikkunaKaksi_Click(object sender, EventArgs e)
         {
             Asiakkaat asi = new Asiakkaat();
@@ -41,9 +28,10 @@ namespace Hotelli
             huoneet.Show(); 
         }
 
-        private void Paaikkuna_Load(object sender, EventArgs e)
+        private void varauksetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Varaukset var = new Varaukset();
+            var.Show();
         }
     }
 }
