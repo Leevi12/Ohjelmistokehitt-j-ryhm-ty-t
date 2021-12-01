@@ -53,14 +53,14 @@ namespace Hotelli
 
         }
         
-        private void HuoneTyyppiCB_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void HuoneTyyppiCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             int huonetype = HuoneTyyppiCB.SelectedIndex + 1;
             
             HuoneNroCB.DataSource = huone.tyypillisethuoneet(huonetype);
             HuoneNroCB.DisplayMember = "Huoneen numero";
             HuoneNroCB.ValueMember = "Huoneen numero";
-        }
+        }*/
 
         private void MuokVrBT_Click(object sender, EventArgs e)
         {

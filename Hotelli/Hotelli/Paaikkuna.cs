@@ -19,9 +19,9 @@ namespace Hotelli
 
         private void ikkunaYksi_Click(object sender, EventArgs e)
         {
-            Form1 formi = new Form1();
-            formi.Show();
-            // example
+            Varaukset vr = new Varaukset();
+            vr.Show();
+            
         }
 
         private void ikkunaKaksi_Click(object sender, EventArgs e)
@@ -34,6 +34,11 @@ namespace Hotelli
         {
             HuoneidenHallinta huoneet = new HuoneidenHallinta();
             huoneet.Show(); 
+        }
+
+        private void Paaikkuna_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
