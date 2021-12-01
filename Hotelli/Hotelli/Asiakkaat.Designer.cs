@@ -29,6 +29,7 @@ namespace Hotelli
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Asiakkaat));
             this.AsiakkaatDG = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,63 +65,84 @@ namespace Hotelli
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.InfoText;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
+            this.label1.Size = new System.Drawing.Size(90, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Etunimi:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.InfoText;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(12, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(108, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Sukunimi:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(711, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 20);
+            this.label3.Size = new System.Drawing.Size(137, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Käyttäjänimi:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(354, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 20);
+            this.label4.Size = new System.Drawing.Size(175, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Postitoimipaikka:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Location = new System.Drawing.Point(354, 74);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 20);
+            this.label5.Size = new System.Drawing.Size(139, 25);
             this.label5.TabIndex = 5;
             this.label5.Text = "Postinumero:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(354, 23);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 20);
+            this.label6.Size = new System.Drawing.Size(118, 25);
             this.label6.TabIndex = 6;
             this.label6.Text = "Lähiosoite:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Desktop;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.Location = new System.Drawing.Point(711, 74);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 20);
+            this.label7.Size = new System.Drawing.Size(110, 25);
             this.label7.TabIndex = 7;
             this.label7.Text = "Salasana:";
             // 
@@ -140,79 +162,104 @@ namespace Hotelli
             // 
             // KayttajaTB
             // 
-            this.KayttajaTB.Location = new System.Drawing.Point(815, 20);
+            this.KayttajaTB.Location = new System.Drawing.Point(854, 20);
             this.KayttajaTB.Name = "KayttajaTB";
-            this.KayttajaTB.Size = new System.Drawing.Size(190, 26);
+            this.KayttajaTB.Size = new System.Drawing.Size(151, 26);
             this.KayttajaTB.TabIndex = 10;
             // 
             // OsoiteTB
             // 
-            this.OsoiteTB.Location = new System.Drawing.Point(497, 17);
+            this.OsoiteTB.Location = new System.Drawing.Point(535, 17);
             this.OsoiteTB.Name = "OsoiteTB";
-            this.OsoiteTB.Size = new System.Drawing.Size(208, 26);
+            this.OsoiteTB.Size = new System.Drawing.Size(170, 26);
             this.OsoiteTB.TabIndex = 11;
             // 
             // PnumTB
             // 
-            this.PnumTB.Location = new System.Drawing.Point(497, 68);
+            this.PnumTB.Location = new System.Drawing.Point(535, 68);
             this.PnumTB.Name = "PnumTB";
-            this.PnumTB.Size = new System.Drawing.Size(208, 26);
+            this.PnumTB.Size = new System.Drawing.Size(170, 26);
             this.PnumTB.TabIndex = 12;
             // 
             // PtPaikkaTB
             // 
-            this.PtPaikkaTB.Location = new System.Drawing.Point(497, 120);
+            this.PtPaikkaTB.Location = new System.Drawing.Point(535, 123);
             this.PtPaikkaTB.Name = "PtPaikkaTB";
-            this.PtPaikkaTB.Size = new System.Drawing.Size(208, 26);
+            this.PtPaikkaTB.Size = new System.Drawing.Size(170, 26);
             this.PtPaikkaTB.TabIndex = 13;
             // 
             // SalasanaTB
             // 
-            this.SalasanaTB.Location = new System.Drawing.Point(815, 74);
+            this.SalasanaTB.Location = new System.Drawing.Point(854, 74);
             this.SalasanaTB.Name = "SalasanaTB";
-            this.SalasanaTB.Size = new System.Drawing.Size(190, 26);
+            this.SalasanaTB.Size = new System.Drawing.Size(151, 26);
             this.SalasanaTB.TabIndex = 14;
             // 
             // TyhjAsBT
             // 
-            this.TyhjAsBT.Location = new System.Drawing.Point(419, 191);
+            this.TyhjAsBT.BackColor = System.Drawing.SystemColors.Desktop;
+            this.TyhjAsBT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.TyhjAsBT.FlatAppearance.BorderSize = 10;
+            this.TyhjAsBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TyhjAsBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TyhjAsBT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TyhjAsBT.Location = new System.Drawing.Point(627, 166);
             this.TyhjAsBT.Name = "TyhjAsBT";
-            this.TyhjAsBT.Size = new System.Drawing.Size(82, 33);
+            this.TyhjAsBT.Size = new System.Drawing.Size(155, 73);
             this.TyhjAsBT.TabIndex = 15;
             this.TyhjAsBT.Text = "Tyhjennä";
-            this.TyhjAsBT.UseVisualStyleBackColor = true;
+            this.TyhjAsBT.UseVisualStyleBackColor = false;
             // 
             // TallAsBT
             // 
-            this.TallAsBT.Location = new System.Drawing.Point(53, 191);
+            this.TallAsBT.BackColor = System.Drawing.SystemColors.Desktop;
+            this.TallAsBT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.TallAsBT.FlatAppearance.BorderSize = 10;
+            this.TallAsBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TallAsBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TallAsBT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TallAsBT.Location = new System.Drawing.Point(43, 166);
             this.TallAsBT.Name = "TallAsBT";
-            this.TallAsBT.Size = new System.Drawing.Size(82, 33);
+            this.TallAsBT.Size = new System.Drawing.Size(145, 73);
             this.TallAsBT.TabIndex = 16;
             this.TallAsBT.Text = "Tallenna";
-            this.TallAsBT.UseVisualStyleBackColor = true;
+            this.TallAsBT.UseVisualStyleBackColor = false;
             // 
             // MuokAsBT
             // 
-            this.MuokAsBT.Location = new System.Drawing.Point(174, 191);
+            this.MuokAsBT.BackColor = System.Drawing.SystemColors.Desktop;
+            this.MuokAsBT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MuokAsBT.FlatAppearance.BorderSize = 10;
+            this.MuokAsBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MuokAsBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.MuokAsBT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MuokAsBT.Location = new System.Drawing.Point(233, 167);
             this.MuokAsBT.Name = "MuokAsBT";
-            this.MuokAsBT.Size = new System.Drawing.Size(82, 33);
+            this.MuokAsBT.Size = new System.Drawing.Size(151, 72);
             this.MuokAsBT.TabIndex = 17;
             this.MuokAsBT.Text = "Muokkaa";
-            this.MuokAsBT.UseVisualStyleBackColor = true;
+            this.MuokAsBT.UseVisualStyleBackColor = false;
             // 
             // PoisAsBT
             // 
-            this.PoisAsBT.Location = new System.Drawing.Point(297, 191);
+            this.PoisAsBT.BackColor = System.Drawing.SystemColors.Desktop;
+            this.PoisAsBT.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PoisAsBT.FlatAppearance.BorderSize = 10;
+            this.PoisAsBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PoisAsBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.PoisAsBT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PoisAsBT.Location = new System.Drawing.Point(433, 167);
             this.PoisAsBT.Name = "PoisAsBT";
-            this.PoisAsBT.Size = new System.Drawing.Size(82, 33);
+            this.PoisAsBT.Size = new System.Drawing.Size(157, 73);
             this.PoisAsBT.TabIndex = 18;
             this.PoisAsBT.Text = "Poista";
-            this.PoisAsBT.UseVisualStyleBackColor = true;
+            this.PoisAsBT.UseVisualStyleBackColor = false;
             // 
             // Asiakkaat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Hotelli.Properties.Resources.images;
             this.ClientSize = new System.Drawing.Size(1043, 516);
             this.Controls.Add(this.PoisAsBT);
             this.Controls.Add(this.MuokAsBT);
@@ -234,6 +281,7 @@ namespace Hotelli
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AsiakkaatDG);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Asiakkaat";
             this.Text = "Asiakkaat";
             this.Load += new System.EventHandler(this.Asiakkaat_Load);

@@ -144,6 +144,11 @@
     <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
     <Content Include="bin\Debug\Ubiety.Dns.Core.dll" />
     <Content Include="bin\Debug\ZstdNet.dll" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\91532419-man-silhouette-simple-black-human-icon-with-shadow-.jpg" />
+    <None Include="Resources\index.jpg" />
+    <None Include="Resources\inline_image_preview.jpg" />
+    <None Include="Resources\How_to_deal_with_an_angry_customerW.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

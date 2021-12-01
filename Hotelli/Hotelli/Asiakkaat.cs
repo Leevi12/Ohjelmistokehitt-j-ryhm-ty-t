@@ -117,7 +117,6 @@ namespace Hotelli
                 MessageBox.Show("Asiakasta ei voida poistaa", "Poisto epäonnistui", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             TyhjAsBT.PerformClick();
-
         }
     }
 }

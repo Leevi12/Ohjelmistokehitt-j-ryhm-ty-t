@@ -22,7 +22,7 @@ namespace Hotelli
             komento.Connection = yhteys.otaYhteys();
             komento.Parameters.Add("@ktj", MySqlDbType.VarChar).Value = ktj;
             komento.Parameters.Add("@etu", MySqlDbType.VarChar).Value = etu;
-            komento.Parameters.Add("@suku", MySqlDbType.UInt32).Value = suku;
+            komento.Parameters.Add("@suku", MySqlDbType.VarChar).Value = suku;
             komento.Parameters.Add("@oso", MySqlDbType.VarChar).Value = oso;
             komento.Parameters.Add("@pnum", MySqlDbType.VarChar).Value = pnum;
             komento.Parameters.Add("@ppaik", MySqlDbType.VarChar).Value = ppaik;
