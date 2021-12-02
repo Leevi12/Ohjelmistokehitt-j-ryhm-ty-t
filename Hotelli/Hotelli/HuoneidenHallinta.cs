@@ -50,6 +50,7 @@ namespace Hotelli
 
         private void HuoneetDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            huoneNumTB.Text = HuoneetDG.CurrentRow.Cells[0].Value.ToString();
             HuoneTyyppiCB.SelectedItem = HuoneetDG.CurrentRow.Cells[1].Value.ToString();
             PuhelinTB.Text = HuoneetDG.CurrentRow.Cells[2].Value.ToString();
         }
