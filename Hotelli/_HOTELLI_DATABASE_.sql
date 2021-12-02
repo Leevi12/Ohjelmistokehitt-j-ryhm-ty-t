@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 02, 2021 at 08:51 AM
+-- Generation Time: Dec 02, 2021 at 01:52 PM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -59,8 +59,9 @@ CREATE TABLE IF NOT EXISTS `huoneet` (
   `huoneTyyppi` varchar(10) NOT NULL,
   `puhelin` varchar(20) NOT NULL,
   `vapaa` varchar(10) NOT NULL,
-  PRIMARY KEY (`huoneNro`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`huoneNro`),
+  KEY `huoneTyyppi` (`huoneTyyppi`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `huoneet`
@@ -70,7 +71,8 @@ INSERT INTO `huoneet` (`huoneNro`, `huoneTyyppi`, `puhelin`, `vapaa`) VALUES
 (1, '2H+K', '101', 'Ei'),
 (2, '1H', '102', 'Kyllä'),
 (3, '2H', '103', 'Kyllä'),
-(4, '2H', '104', 'Kyllä');
+(4, '2H', '104', 'Kyllä'),
+(5, '2H', '105', 'Kyllä');
 
 -- --------------------------------------------------------
 
@@ -93,20 +95,20 @@ CREATE TABLE IF NOT EXISTS `huonekategoria` (
 
 DROP TABLE IF EXISTS `varaukset`;
 CREATE TABLE IF NOT EXISTS `varaukset` (
-  `VarausNro` int NOT NULL AUTO_INCREMENT,
-  `AsiakasNro` int NOT NULL,
+  `VarausID` int NOT NULL AUTO_INCREMENT,
+  `AsiakasID` int NOT NULL,
   `Huonetyyppi` varchar(10) NOT NULL,
   `HuoneNro` int NOT NULL,
   `Sisaan` date NOT NULL,
   `Ulos` date NOT NULL,
-  PRIMARY KEY (`VarausNro`)
+  PRIMARY KEY (`VarausID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1256 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `varaukset`
 --
 
-INSERT INTO `varaukset` (`VarausNro`, `AsiakasNro`, `Huonetyyppi`, `HuoneNro`, `Sisaan`, `Ulos`) VALUES
+INSERT INTO `varaukset` (`VarausID`, `AsiakasID`, `Huonetyyppi`, `HuoneNro`, `Sisaan`, `Ulos`) VALUES
 (1255, 1, '2H+K', 1, '1814-12-12', '2042-12-12');
 COMMIT;
 
