@@ -42,7 +42,7 @@ namespace Hotelli
         }
         public DataTable getAsiakkaat()
         {
-            MySqlCommand komento = new MySqlCommand("SELECT kayttajanimi, etunimi, sukunimi, lahiosoite, postinumero, postitoimipaikka, salasana From asiakkaat", yhteys.otaYhteys());
+            MySqlCommand komento = new MySqlCommand("SELECT kayttajanimi, etunimi, sukunimi, lahiosoite, postinumero, postitoimipaikka, salasana FROM asiakkaat", yhteys.otaYhteys());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 
@@ -78,13 +78,13 @@ namespace Hotelli
                 return false;
             }
         }
-        public bool deleteAsiakas(String Käyttäjänimi)
+        public bool deleteAsiakas(String kayttajanimi)
         {
             MySqlCommand komento = new MySqlCommand();
-            String deleting = "DELETE FROM asiakkaat WHERE kayttajanimi = @ktj";
+            String deleting = "DELETE FROM asiakkaat WHERE AsiakasID = @aid";
             komento.CommandText = deleting;
             komento.Connection = yhteys.otaYhteys();
-            komento.Parameters.Add("@ktj", MySqlDbType.UInt32).Value = Käyttäjänimi;
+            komento.Parameters.Add("@aid", MySqlDbType.UInt32).Value = kayttajanimi;
 
             yhteys.avaaYhteys();
             if (komento.ExecuteNonQuery() == 1)

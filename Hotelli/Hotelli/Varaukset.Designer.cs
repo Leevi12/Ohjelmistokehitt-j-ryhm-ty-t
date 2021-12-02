@@ -219,6 +219,7 @@ namespace Hotelli
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Name = "Varaukset";
             this.Text = "Varaukset";
+            this.Load += new System.EventHandler(this.Varaukset_Load);
             ((System.ComponentModel.ISupportInitialize)(this.VarauksetDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
