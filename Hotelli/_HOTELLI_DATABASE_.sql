@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 02, 2021 at 07:55 AM
+-- Generation Time: Dec 02, 2021 at 08:51 AM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `asiakkaat`;
 CREATE TABLE IF NOT EXISTS `asiakkaat` (
+  `AsiakasID` int NOT NULL AUTO_INCREMENT,
   `kayttajanimi` varchar(20) NOT NULL,
   `etunimi` varchar(20) NOT NULL,
   `sukunimi` varchar(30) NOT NULL,
@@ -36,15 +37,15 @@ CREATE TABLE IF NOT EXISTS `asiakkaat` (
   `postinumero` varchar(10) NOT NULL,
   `postitoimipaikka` varchar(20) NOT NULL,
   `salasana` varchar(20) NOT NULL,
-  PRIMARY KEY (`kayttajanimi`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`AsiakasID`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `asiakkaat`
 --
 
-INSERT INTO `asiakkaat` (`kayttajanimi`, `etunimi`, `sukunimi`, `lahiosoite`, `postinumero`, `postitoimipaikka`, `salasana`) VALUES
-('ErkEsim', 'Erkki', 'Esimerkki', 'Esimerkkitie 1 A', '00200', 'Helsinki', 'password');
+INSERT INTO `asiakkaat` (`AsiakasID`, `kayttajanimi`, `etunimi`, `sukunimi`, `lahiosoite`, `postinumero`, `postitoimipaikka`, `salasana`) VALUES
+(1, 'ErkEsim', 'Erkki', 'Esimerkki', 'Esimerkkitie 1 A', '00200', 'Helsinki', 'password');
 
 -- --------------------------------------------------------
 
@@ -70,6 +71,19 @@ INSERT INTO `huoneet` (`huoneNro`, `huoneTyyppi`, `puhelin`, `vapaa`) VALUES
 (2, '1H', '102', 'Kyllä'),
 (3, '2H', '103', 'Kyllä'),
 (4, '2H', '104', 'Kyllä');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `huonekategoria`
+--
+
+DROP TABLE IF EXISTS `huonekategoria`;
+CREATE TABLE IF NOT EXISTS `huonekategoria` (
+  `KategoriaID` int NOT NULL AUTO_INCREMENT,
+  `Huonetyyppi` varchar(15) NOT NULL,
+  PRIMARY KEY (`KategoriaID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
