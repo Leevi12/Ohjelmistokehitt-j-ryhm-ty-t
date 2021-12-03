@@ -67,6 +67,7 @@ namespace Hotelli
             this.PoisVrBT.TabIndex = 36;
             this.PoisVrBT.Text = "Poista";
             this.PoisVrBT.UseVisualStyleBackColor = true;
+            this.PoisVrBT.Click += new System.EventHandler(this.PoisVrBT_Click);
             // 
             // MuokVrBT
             // 
@@ -76,6 +77,7 @@ namespace Hotelli
             this.MuokVrBT.TabIndex = 35;
             this.MuokVrBT.Text = "Muokkaa";
             this.MuokVrBT.UseVisualStyleBackColor = true;
+            this.MuokVrBT.Click += new System.EventHandler(this.MuokVrBT_Click);
             // 
             // TallVrBT
             // 
@@ -85,6 +87,7 @@ namespace Hotelli
             this.TallVrBT.TabIndex = 34;
             this.TallVrBT.Text = "Tallenna";
             this.TallVrBT.UseVisualStyleBackColor = true;
+            this.TallVrBT.Click += new System.EventHandler(this.TallVrBT_Click);
             // 
             // TyhjVrBT
             // 
@@ -94,6 +97,7 @@ namespace Hotelli
             this.TyhjVrBT.TabIndex = 33;
             this.TyhjVrBT.Text = "Tyhjennä";
             this.TyhjVrBT.UseVisualStyleBackColor = true;
+            //this.TyhjVrBT.Click += new System.EventHandler(this.TyhjVrBT_Click);
             // 
             // label1
             // 

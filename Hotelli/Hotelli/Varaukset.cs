@@ -42,14 +42,15 @@ namespace Hotelli
 
         private void Varaukset_Load(object sender, EventArgs e)
         {
+            VarauksetDG.DataSource = varaus.haeVaraukset();
+
+            HuoneTyyppiCB.ValueMember = "KategoriaId";
             HuoneTyyppiCB.DataSource = huone.haeHuoneet();
             HuoneTyyppiCB.DisplayMember = "Huonetyyppi";
-            HuoneTyyppiCB.ValueMember = "KategoriaId";
 
+            AsiakasCB.ValueMember = "AsiakasId";
             AsiakasCB.DataSource = asiakas.getAsiakkaat();
             AsiakasCB.DisplayMember = "Kokonimi";
-            AsiakasCB.ValueMember = "AsiakasId";
-            VarauksetDG.DataSource = varaus.haeVaraukset();
 
         }
         
@@ -115,13 +116,13 @@ namespace Hotelli
                 else
                 {
                     MessageBox.Show("Varauksen poisto epäonnistui", "Varauksen poisto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                TyhjVrBT.PerformClick();
+                }   
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Virhe " + ex);
             }
+            TyhjVrBT.PerformClick();
         }
     }
 }
