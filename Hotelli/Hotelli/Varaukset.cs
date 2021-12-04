@@ -42,26 +42,41 @@ namespace Hotelli
 
         private void Varaukset_Load(object sender, EventArgs e)
         {
+
             VarauksetDG.DataSource = varaus.haeVaraukset();
 
             HuoneTyyppiCB.ValueMember = "KategoriaId";
             HuoneTyyppiCB.DataSource = huone.haeHuoneet();
             HuoneTyyppiCB.DisplayMember = "Huonetyyppi";
 
-            AsiakasCB.ValueMember = "AsiakasId";
+            AsiakasCB.ValueMember = "AsiakasID";
+            AsiakasCB.DisplayMember = "etunimi, sukunimi";
             AsiakasCB.DataSource = asiakas.getAsiakkaat();
-            AsiakasCB.DisplayMember = "Kokonimi";
 
         }
-        
-        /*private void HuoneTyyppiCB_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void HuoneTyyppiCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int huonetype = HuoneTyyppiCB.SelectedIndex + 1;
-            
-            HuoneNroCB.DataSource = huone.tyypillisethuoneet(huonetype);
-            HuoneNroCB.DisplayMember = "Huoneen numero";
-            HuoneNroCB.ValueMember = "Huoneen numero";
-        }*/
+            HuoneNroCB.ValueMember = "Huonetyyppi"; 
+            HuoneNroCB.DisplayMember = "Huonetyyppi";
+            HuoneNroCB.DataSource = huone.haeHuoneet();
+
+        }
+
+        private void AsiakasCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AsiakasCB.ValueMember = "AsiakasID";
+            AsiakasCB.DisplayMember = "etunimi, sukunimi";
+            AsiakasCB.DataSource = asiakas.getAsiakkaat();
+
+        }
+
+        private void HuoneNroCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HuoneNroCB.ValueMember = "HuoneNro";
+            HuoneNroCB.DisplayMember = "HuoneNro";
+            HuoneNroCB.DataSource = huone.haeHuoneet();
+        }
 
         private void MuokVrBT_Click(object sender, EventArgs e)
         {

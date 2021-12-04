@@ -42,7 +42,7 @@ namespace Hotelli
         }
         public DataTable getAsiakkaat()
         {
-            MySqlCommand komento = new MySqlCommand("SELECT kayttajanimi, etunimi, sukunimi, lahiosoite, postinumero, postitoimipaikka, salasana FROM asiakkaat", yhteys.otaYhteys());
+            MySqlCommand komento = new MySqlCommand("SELECT AsiakasID kayttajanimi, etunimi, sukunimi, lahiosoite, postinumero, postitoimipaikka, salasana FROM asiakkaat", yhteys.otaYhteys());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 

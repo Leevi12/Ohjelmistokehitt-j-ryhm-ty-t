@@ -44,8 +44,8 @@ namespace Hotelli
             this.SisaanDTP = new System.Windows.Forms.DateTimePicker();
             this.UlosDTP = new System.Windows.Forms.DateTimePicker();
             this.HuoneTyyppiCB = new System.Windows.Forms.ComboBox();
-            this.AsiakasCB = new System.Windows.Forms.ComboBox();
             this.HuoneNroCB = new System.Windows.Forms.ComboBox();
+            this.AsiakasCB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.VarauksetDG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +97,6 @@ namespace Hotelli
             this.TyhjVrBT.TabIndex = 33;
             this.TyhjVrBT.Text = "Tyhjennä";
             this.TyhjVrBT.UseVisualStyleBackColor = true;
-            //this.TyhjVrBT.Click += new System.EventHandler(this.TyhjVrBT_Click);
             // 
             // label1
             // 
@@ -155,6 +154,7 @@ namespace Hotelli
             // 
             // VrNumeroTB
             // 
+            this.VrNumeroTB.Enabled = false;
             this.VrNumeroTB.Location = new System.Drawing.Point(321, 21);
             this.VrNumeroTB.Name = "VrNumeroTB";
             this.VrNumeroTB.Size = new System.Drawing.Size(208, 26);
@@ -182,14 +182,6 @@ namespace Hotelli
             this.HuoneTyyppiCB.Size = new System.Drawing.Size(208, 28);
             this.HuoneTyyppiCB.TabIndex = 40;
             // 
-            // AsiakasCB
-            // 
-            this.AsiakasCB.FormattingEnabled = true;
-            this.AsiakasCB.Location = new System.Drawing.Point(321, 66);
-            this.AsiakasCB.Name = "AsiakasCB";
-            this.AsiakasCB.Size = new System.Drawing.Size(208, 28);
-            this.AsiakasCB.TabIndex = 41;
-            // 
             // HuoneNroCB
             // 
             this.HuoneNroCB.FormattingEnabled = true;
@@ -197,14 +189,23 @@ namespace Hotelli
             this.HuoneNroCB.Name = "HuoneNroCB";
             this.HuoneNroCB.Size = new System.Drawing.Size(208, 28);
             this.HuoneNroCB.TabIndex = 42;
+            this.HuoneNroCB.SelectedIndexChanged += new System.EventHandler(this.HuoneNroCB_SelectedIndexChanged);
+            // 
+            // AsiakasCB
+            // 
+            this.AsiakasCB.FormattingEnabled = true;
+            this.AsiakasCB.Location = new System.Drawing.Point(321, 66);
+            this.AsiakasCB.Name = "AsiakasCB";
+            this.AsiakasCB.Size = new System.Drawing.Size(208, 28);
+            this.AsiakasCB.TabIndex = 43;
             // 
             // Varaukset
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 521);
-            this.Controls.Add(this.HuoneNroCB);
             this.Controls.Add(this.AsiakasCB);
+            this.Controls.Add(this.HuoneNroCB);
             this.Controls.Add(this.HuoneTyyppiCB);
             this.Controls.Add(this.UlosDTP);
             this.Controls.Add(this.SisaanDTP);
@@ -247,7 +248,7 @@ namespace Hotelli
         private System.Windows.Forms.DateTimePicker SisaanDTP;
         private System.Windows.Forms.DateTimePicker UlosDTP;
         private System.Windows.Forms.ComboBox HuoneTyyppiCB;
-        private System.Windows.Forms.ComboBox AsiakasCB;
         private System.Windows.Forms.ComboBox HuoneNroCB;
+        private System.Windows.Forms.ComboBox AsiakasCB;
     }
 }
