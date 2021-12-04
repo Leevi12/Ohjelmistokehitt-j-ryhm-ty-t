@@ -22,8 +22,24 @@ namespace Hotelli
             InitializeComponent();
         }
 
+        private void Varaukset_Load(object sender, EventArgs e)
+        {
+
+            VarauksetDG.DataSource = varaus.haeVaraukset();
+
+            HuoneTyyppiCB.ValueMember = "KategoriaId";
+            HuoneTyyppiCB.DataSource = huone.haeHuoneet();
+            HuoneTyyppiCB.DisplayMember = "Huonetyyppi";
+
+            AsiakasCB.ValueMember = "AsiakasID";
+            AsiakasCB.DisplayMember = "etunimi, sukunimi";
+            AsiakasCB.DataSource = asiakas.getAsiakkaat();
+
+        }
+
         private void TallVrBT_Click(object sender, EventArgs e)
         {
+            
             int asiakas = Convert.ToInt32(AsiakasCB.SelectedValue.ToString());
             int huone = Convert.ToInt32(HuoneTyyppiCB.SelectedValue.ToString());
             DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
@@ -38,21 +54,6 @@ namespace Hotelli
                 MessageBox.Show("Varauksen lisäys epäonnistui", "Varaus epäonnistui", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             VarauksetDG.DataSource = varaus.haeVaraukset();
-        }
-
-        private void Varaukset_Load(object sender, EventArgs e)
-        {
-
-            VarauksetDG.DataSource = varaus.haeVaraukset();
-
-            HuoneTyyppiCB.ValueMember = "KategoriaId";
-            HuoneTyyppiCB.DataSource = huone.haeHuoneet();
-            HuoneTyyppiCB.DisplayMember = "Huonetyyppi";
-
-            AsiakasCB.ValueMember = "AsiakasID";
-            AsiakasCB.DisplayMember = "etunimi, sukunimi";
-            AsiakasCB.DataSource = asiakas.getAsiakkaat();
-
         }
 
         private void HuoneTyyppiCB_SelectedIndexChanged(object sender, EventArgs e)
