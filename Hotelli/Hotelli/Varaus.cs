@@ -27,11 +27,23 @@ namespace Hotelli
         public DataTable haeVaraukset()
         {
             MySqlCommand komento = new MySqlCommand("SELECT * FROM varaukset", yhteys.otaYhteys());
-            MySqlDataAdapter adap = new MySqlDataAdapter();
+            MySqlDataAdapter adapt = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 
-            adap.SelectCommand = komento;
-            adap.Fill(taulu);
+            adapt.SelectCommand = komento;
+            adapt.Fill(taulu);
+            return taulu;
+        }
+
+        public DataTable getAsiakkaat()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM asiakkaat", yhteys.otaYhteys());
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(taulu);
+
             return taulu;
         }
 
@@ -98,7 +110,7 @@ namespace Hotelli
         public bool deleteVaraus(String varausnro)
         {
             MySqlCommand komento = new MySqlCommand();
-            String deleting = "DELETE FROM varaukset WHERE VarausNro = @vnro";
+            String deleting = "DELETE FROM varaukset WHERE VarausID = @vnro";
             komento.CommandText = deleting;
             komento.Connection = yhteys.otaYhteys();
             komento.Parameters.Add("@vnro", MySqlDbType.UInt32).Value = varausnro;

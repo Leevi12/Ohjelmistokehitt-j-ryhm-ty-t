@@ -22,8 +22,24 @@ namespace Hotelli
             InitializeComponent();
         }
 
+        private void Varaukset_Load(object sender, EventArgs e)
+        {
+
+            VarauksetDG.DataSource = varaus.haeVaraukset();
+
+            HuoneTyyppiCB.ValueMember = "KategoriaId";
+            HuoneTyyppiCB.DataSource = huone.haeHuoneet();
+            HuoneTyyppiCB.DisplayMember = "Huonetyyppi";
+
+            AsiakasCB.ValueMember = "AsiakasID";
+            AsiakasCB.DisplayMember = "etunimi, sukunimi";
+            AsiakasCB.DataSource = asiakas.getAsiakkaat();
+
+        }
+
         private void TallVrBT_Click(object sender, EventArgs e)
         {
+            
             int asiakas = Convert.ToInt32(AsiakasCB.SelectedValue.ToString());
             int huone = Convert.ToInt32(HuoneTyyppiCB.SelectedValue.ToString());
             DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
@@ -40,27 +56,28 @@ namespace Hotelli
             VarauksetDG.DataSource = varaus.haeVaraukset();
         }
 
-        private void Varaukset_Load(object sender, EventArgs e)
+        private void HuoneTyyppiCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HuoneTyyppiCB.DataSource = huone.haeHuoneet();
-            HuoneTyyppiCB.DisplayMember = "Huonetyyppi";
-            HuoneTyyppiCB.ValueMember = "KategoriaId";
-
-            AsiakasCB.DataSource = asiakas.getAsiakkaat();
-            AsiakasCB.DisplayMember = "Kokonimi";
-            AsiakasCB.ValueMember = "AsiakasId";
-            VarauksetDG.DataSource = varaus.haeVaraukset();
+            HuoneNroCB.ValueMember = "Huonetyyppi"; 
+            HuoneNroCB.DisplayMember = "Huonetyyppi";
+            HuoneNroCB.DataSource = huone.haeHuoneet();
 
         }
-        
-        /*private void HuoneTyyppiCB_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void AsiakasCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int huonetype = HuoneTyyppiCB.SelectedIndex + 1;
-            
-            HuoneNroCB.DataSource = huone.tyypillisethuoneet(huonetype);
-            HuoneNroCB.DisplayMember = "Huoneen numero";
-            HuoneNroCB.ValueMember = "Huoneen numero";
-        }*/
+            AsiakasCB.ValueMember = "AsiakasID";
+            AsiakasCB.DisplayMember = "etunimi, sukunimi";
+            AsiakasCB.DataSource = asiakas.getAsiakkaat();
+
+        }
+
+        private void HuoneNroCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HuoneNroCB.ValueMember = "HuoneNro";
+            HuoneNroCB.DisplayMember = "HuoneNro";
+            HuoneNroCB.DataSource = huone.haeHuoneet();
+        }
 
         private void MuokVrBT_Click(object sender, EventArgs e)
         {
@@ -115,13 +132,13 @@ namespace Hotelli
                 else
                 {
                     MessageBox.Show("Varauksen poisto epäonnistui", "Varauksen poisto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                TyhjVrBT.PerformClick();
+                }   
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Virhe " + ex);
             }
+            TyhjVrBT.PerformClick();
         }
     }
 }

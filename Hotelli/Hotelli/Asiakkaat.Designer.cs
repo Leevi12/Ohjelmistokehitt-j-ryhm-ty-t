@@ -209,6 +209,7 @@ namespace Hotelli
             this.TyhjAsBT.TabIndex = 15;
             this.TyhjAsBT.Text = "Tyhjennä";
             this.TyhjAsBT.UseVisualStyleBackColor = false;
+            this.TyhjAsBT.Click += new System.EventHandler(this.TyhjAsBT_Click);
             // 
             // TallAsBT
             // 
@@ -224,6 +225,7 @@ namespace Hotelli
             this.TallAsBT.TabIndex = 16;
             this.TallAsBT.Text = "Tallenna";
             this.TallAsBT.UseVisualStyleBackColor = false;
+            this.TallAsBT.Click += new System.EventHandler(this.TallAsBT_Click);
             // 
             // MuokAsBT
             // 
@@ -239,6 +241,7 @@ namespace Hotelli
             this.MuokAsBT.TabIndex = 17;
             this.MuokAsBT.Text = "Muokkaa";
             this.MuokAsBT.UseVisualStyleBackColor = false;
+            this.MuokAsBT.Click += new System.EventHandler(this.MuokAsBT_Click);
             // 
             // PoisAsBT
             // 
@@ -254,6 +257,7 @@ namespace Hotelli
             this.PoisAsBT.TabIndex = 18;
             this.PoisAsBT.Text = "Poista";
             this.PoisAsBT.UseVisualStyleBackColor = false;
+            this.PoisAsBT.Click += new System.EventHandler(this.PoisAsBT_Click);
             // 
             // Asiakkaat
             // 
