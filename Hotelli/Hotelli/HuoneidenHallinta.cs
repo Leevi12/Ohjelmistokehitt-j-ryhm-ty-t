@@ -23,8 +23,18 @@ namespace Hotelli
         {
             string tyyppi = HuoneTyyppiCB.SelectedItem.ToString();
             string puh = PuhelinTB.Text;
+            string vapaa = "";
+            if (KyllaRB.Checked)
 
-            if (huone.lisaaHuone(tyyppi, puh, "Kyllä"))
+            {
+                vapaa = "Kyllä";
+            }
+            else
+            {
+                vapaa = "Ei";
+            }
+
+            if (huone.lisaaHuone(tyyppi, puh, vapaa))
             {
                 MessageBox.Show("Huone lisätty onnistuneesti", "Huoneen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
