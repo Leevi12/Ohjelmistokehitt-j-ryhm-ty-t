@@ -49,6 +49,8 @@ namespace Hotelli
             this.TallAsBT = new System.Windows.Forms.Button();
             this.MuokAsBT = new System.Windows.Forms.Button();
             this.PoisAsBT = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.AsiakasIDTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.AsiakkaatDG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +63,7 @@ namespace Hotelli
             this.AsiakkaatDG.RowTemplate.Height = 28;
             this.AsiakkaatDG.Size = new System.Drawing.Size(1019, 244);
             this.AsiakkaatDG.TabIndex = 0;
+            this.AsiakkaatDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AsiakkaatDG_CellClick);
             // 
             // label1
             // 
@@ -68,7 +71,7 @@ namespace Hotelli
             this.label1.BackColor = System.Drawing.SystemColors.InfoText;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(12, 23);
+            this.label1.Location = new System.Drawing.Point(12, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 25);
             this.label1.TabIndex = 1;
@@ -80,7 +83,7 @@ namespace Hotelli
             this.label2.BackColor = System.Drawing.SystemColors.InfoText;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(12, 74);
+            this.label2.Location = new System.Drawing.Point(12, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 25);
             this.label2.TabIndex = 2;
@@ -148,14 +151,14 @@ namespace Hotelli
             // 
             // EtunimiTB
             // 
-            this.EtunimiTB.Location = new System.Drawing.Point(140, 17);
+            this.EtunimiTB.Location = new System.Drawing.Point(140, 73);
             this.EtunimiTB.Name = "EtunimiTB";
             this.EtunimiTB.Size = new System.Drawing.Size(208, 26);
             this.EtunimiTB.TabIndex = 8;
             // 
             // SukunimiTB
             // 
-            this.SukunimiTB.Location = new System.Drawing.Point(140, 74);
+            this.SukunimiTB.Location = new System.Drawing.Point(140, 123);
             this.SukunimiTB.Name = "SukunimiTB";
             this.SukunimiTB.Size = new System.Drawing.Size(208, 26);
             this.SukunimiTB.TabIndex = 9;
@@ -259,12 +262,35 @@ namespace Hotelli
             this.PoisAsBT.UseVisualStyleBackColor = false;
             this.PoisAsBT.Click += new System.EventHandler(this.PoisAsBT_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(12, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 25);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "AsiakasID:";
+            // 
+            // AsiakasIDTB
+            // 
+            this.AsiakasIDTB.BackColor = System.Drawing.SystemColors.Info;
+            this.AsiakasIDTB.Location = new System.Drawing.Point(140, 22);
+            this.AsiakasIDTB.Name = "AsiakasIDTB";
+            this.AsiakasIDTB.ReadOnly = true;
+            this.AsiakasIDTB.Size = new System.Drawing.Size(208, 26);
+            this.AsiakasIDTB.TabIndex = 20;
+            // 
             // Asiakkaat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Hotelli.Properties.Resources.images;
             this.ClientSize = new System.Drawing.Size(1043, 516);
+            this.Controls.Add(this.AsiakasIDTB);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.PoisAsBT);
             this.Controls.Add(this.MuokAsBT);
             this.Controls.Add(this.TallAsBT);
@@ -316,5 +342,7 @@ namespace Hotelli
         private System.Windows.Forms.Button TallAsBT;
         private System.Windows.Forms.Button MuokAsBT;
         private System.Windows.Forms.Button PoisAsBT;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox AsiakasIDTB;
     }
 }

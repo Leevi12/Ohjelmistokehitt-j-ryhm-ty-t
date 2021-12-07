@@ -95,6 +95,7 @@ namespace Hotelli
             {
                 MessageBox.Show("Huonetta ei pystytty poistamaan", "Huoneen poisto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            button4.PerformClick();
             HuoneetDG.DataSource = huone.haeHuoneet();
         }
     }
