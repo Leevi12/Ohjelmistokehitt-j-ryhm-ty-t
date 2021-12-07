@@ -52,15 +52,16 @@ namespace Hotelli
             return taulu;
         }
 
-        public bool editAsiakas(String ktj, String etu, String suku, String oso, String pnum, String ppaik, String sala)
+        public bool editAsiakas(int aid, String ktj, String etu, String suku, String oso, String pnum, String ppaik, String sala)
         {
             MySqlCommand komento = new MySqlCommand();
-            String updating = "UPDATE asiakkaat SET etunimi = @etu, sukunimi = @suku, lahiosoite = @oso, postinumero = @pnum, postitoimipaikka = @ppaik, salasana = @sala WHERE kayttajanimi = @ktj";
+            String updating = "UPDATE asiakkaat SET kayttajanimi = @ktj, etunimi = @etu, sukunimi = @suku, lahiosoite = @oso, postinumero = @pnum, postitoimipaikka = @ppaik, salasana = @sala WHERE AsiakasID = @aid";
             komento.CommandText = updating;
             komento.Connection = yhteys.otaYhteys();
+            komento.Parameters.Add("@aid", MySqlDbType.VarChar).Value = aid;
             komento.Parameters.Add("@ktj", MySqlDbType.VarChar).Value = ktj;
             komento.Parameters.Add("@etu", MySqlDbType.VarChar).Value = etu;
-            komento.Parameters.Add("@suku", MySqlDbType.UInt32).Value = suku;
+            komento.Parameters.Add("@suku", MySqlDbType.VarChar).Value = suku;
             komento.Parameters.Add("@oso", MySqlDbType.VarChar).Value = oso;
             komento.Parameters.Add("@pnum", MySqlDbType.VarChar).Value = pnum;
             komento.Parameters.Add("@ppaik", MySqlDbType.VarChar).Value = ppaik;
@@ -78,13 +79,13 @@ namespace Hotelli
                 return false;
             }
         }
-        public bool deleteAsiakas(String kayttajanimi)
+        public bool deleteAsiakas(int asiakasid)
         {
             MySqlCommand komento = new MySqlCommand();
             String deleting = "DELETE FROM asiakkaat WHERE AsiakasID = @aid";
             komento.CommandText = deleting;
             komento.Connection = yhteys.otaYhteys();
-            komento.Parameters.Add("@aid", MySqlDbType.UInt32).Value = kayttajanimi;
+            komento.Parameters.Add("@aid", MySqlDbType.UInt32).Value = asiakasid;
 
             yhteys.avaaYhteys();
             if (komento.ExecuteNonQuery() == 1)

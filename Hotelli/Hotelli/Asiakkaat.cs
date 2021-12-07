@@ -67,6 +67,7 @@ namespace Hotelli
 
         private void MuokAsBT_Click(object sender, EventArgs e)
         {
+            int aid = int.Parse(AsiakasIDTB.Text);
             String etu = EtunimiTB.Text;
             String suku = SukunimiTB.Text;
             String ktj = KayttajaTB.Text;
@@ -81,7 +82,7 @@ namespace Hotelli
             }
             else
             {
-                Boolean addNewAsiakas = ASIAKAS.editAsiakas(ktj, etu, suku, oso, posnum, ppaik, sala);
+                Boolean addNewAsiakas = ASIAKAS.editAsiakas(aid, ktj, etu, suku, oso, posnum, ppaik, sala);
                 if (addNewAsiakas)
                 {
                     MessageBox.Show("Asiakas päivitetty onnistuneesti", "Päivitys", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -96,18 +97,19 @@ namespace Hotelli
 
         private void AsiakkaatDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            EtunimiTB.Text = AsiakkaatDG.CurrentRow.Cells[0].Value.ToString();
-            SukunimiTB.Text = AsiakkaatDG.CurrentRow.Cells[1].Value.ToString();
-            KayttajaTB.Text = AsiakkaatDG.CurrentRow.Cells[2].Value.ToString();
-            OsoiteTB.Text = AsiakkaatDG.CurrentRow.Cells[3].Value.ToString();
-            PnumTB.Text = AsiakkaatDG.CurrentRow.Cells[4].Value.ToString();
-            PtPaikkaTB.Text = AsiakkaatDG.CurrentRow.Cells[5].Value.ToString();
-            SalasanaTB.Text = AsiakkaatDG.CurrentRow.Cells[6].Value.ToString();
+            AsiakasIDTB.Text = AsiakkaatDG.CurrentRow.Cells[0].Value.ToString();
+            EtunimiTB.Text = AsiakkaatDG.CurrentRow.Cells[1].Value.ToString();
+            SukunimiTB.Text = AsiakkaatDG.CurrentRow.Cells[2].Value.ToString();
+            KayttajaTB.Text = AsiakkaatDG.CurrentRow.Cells[3].Value.ToString();
+            OsoiteTB.Text = AsiakkaatDG.CurrentRow.Cells[4].Value.ToString();
+            PnumTB.Text = AsiakkaatDG.CurrentRow.Cells[5].Value.ToString();
+            PtPaikkaTB.Text = AsiakkaatDG.CurrentRow.Cells[6].Value.ToString();
+            SalasanaTB.Text = AsiakkaatDG.CurrentRow.Cells[7].Value.ToString();
         }
         private void PoisAsBT_Click(object sender, EventArgs e)
         {
-            String kayttajanimi = KayttajaTB.Text;
-            if (ASIAKAS.deleteAsiakas(kayttajanimi))
+            int aid = int.Parse(AsiakkaatDG.CurrentRow.Cells[0].Value.ToString());
+            if (ASIAKAS.deleteAsiakas(aid))
             {
                 AsiakkaatDG.DataSource = ASIAKAS.getAsiakkaat();
                 MessageBox.Show("Asiakas on poistettu", "Poisto", MessageBoxButtons.OK, MessageBoxIcon.Information);
