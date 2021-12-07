@@ -37,7 +37,7 @@ namespace Hotelli
 
             HuoneNroCB.ValueMember = "HuoneNro";
             HuoneNroCB.DisplayMember = "HuoneNro";
-            HuoneNroCB.DataSource = huone.haeHuoneet();
+            HuoneNroCB.DataSource = huone.TyypillisetHuoneet();
 
         }
 
@@ -45,6 +45,7 @@ namespace Hotelli
         {
             
             int asiakas = Convert.ToInt32(AsiakasCB.SelectedValue.ToString());
+
             int huone = Convert.ToInt32(HuoneTyyppiCB.SelectedValue.ToString());
             DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
             DateTime uloskirjautuminen = Convert.ToDateTime(UlosDTP.Value);
@@ -80,7 +81,7 @@ namespace Hotelli
         {
             HuoneNroCB.ValueMember = "HuoneNro";
             HuoneNroCB.DisplayMember = "HuoneNro";
-            HuoneNroCB.DataSource = huone.haeHuoneet();
+            HuoneNroCB.DataSource = huone.TyypillisetHuoneet();
         }
 
         private void MuokVrBT_Click(object sender, EventArgs e)

@@ -24,6 +24,19 @@ namespace Hotelli
             return taulu;
         }
 
+        public DataTable TyypillisetHuoneet()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT huoneNro FROM huoneet WHERE Vapaa = true", yhteys.otaYhteys());
+            MySqlDataAdapter adap = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adap.SelectCommand = komento;
+            adap.Fill(taulu);
+            return taulu;
+        }
+
+
+
         public bool lisaaHuone(string hnTyyppi, string puh, string vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
@@ -55,6 +68,7 @@ namespace Hotelli
                 return false;
             }
         }
+
 
         public bool poistaHuone(int hnro)
         {
