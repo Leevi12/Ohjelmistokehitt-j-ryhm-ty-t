@@ -32,8 +32,12 @@ namespace Hotelli
             HuoneTyyppiCB.DisplayMember = "Huonetyyppi";
 
             AsiakasCB.ValueMember = "AsiakasID";
-            AsiakasCB.DisplayMember = "etunimi, sukunimi";
+            AsiakasCB.DisplayMember = "Kokonimi";
             AsiakasCB.DataSource = asiakas.getAsiakkaat();
+
+            HuoneNroCB.ValueMember = "HuoneNro";
+            HuoneNroCB.DisplayMember = "HuoneNro";
+            HuoneNroCB.DataSource = huone.haeHuoneet();
 
         }
 
@@ -67,7 +71,7 @@ namespace Hotelli
         private void AsiakasCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             AsiakasCB.ValueMember = "AsiakasID";
-            AsiakasCB.DisplayMember = "etunimi, sukunimi";
+            AsiakasCB.DisplayMember = "Kokonimi";
             AsiakasCB.DataSource = asiakas.getAsiakkaat();
 
         }
