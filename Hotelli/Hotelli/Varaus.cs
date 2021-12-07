@@ -47,18 +47,19 @@ namespace Hotelli
             return taulu;
         }
 
-        public bool addVaraus(int huonro, int asnro, DateTime sisa, DateTime ulos)
+        public bool addVaraus(int asid, String huotyyp, int huonro, DateTime sisa, DateTime ulos)
         {
             MySqlCommand komento = new MySqlCommand();
             String adding = "INSERT INTO varaukset " +
-                "(HuoneNro, AsiakasNro, Sisaan, Ulos) " +
-                "VALUES (@hno, @anro, @sis, @ulo); ";
+                "(AsiakasID, Huonetyyppi, HuoneNro, Sisaan, Ulos) " +
+                "VALUES (@anro, @hty, @hno, @sis, @ulo); ";
             komento.CommandText = adding;
             komento.Connection = yhteys.otaYhteys();
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = huonro;
-            komento.Parameters.Add("@anro", MySqlDbType.Int32).Value = asnro;
-            komento.Parameters.Add("@sis", MySqlDbType.Date).Value = sisa;
-            komento.Parameters.Add("@ulo", MySqlDbType.VarChar).Value = ulos;
+            komento.Parameters.Add("@hty", MySqlDbType.VarChar).Value = huotyyp;
+            komento.Parameters.Add("@anro", MySqlDbType.Int32).Value = asid;
+            komento.Parameters.Add("@sis", MySqlDbType.DateTime).Value = sisa;
+            komento.Parameters.Add("@ulo", MySqlDbType.DateTime).Value = ulos;
 
             yhteys.avaaYhteys();
             try
@@ -81,18 +82,19 @@ namespace Hotelli
             }
         }
 
-        public bool editVaraus(int varnro, int huonro, int asnro, DateTime sisa, DateTime ulos)
+        public bool editVaraus(int varnro, int asid, String huotyyp, int huonro, DateTime sisa, DateTime ulos)
         {
             MySqlCommand komento = new MySqlCommand();
             String updating = "UPDATE varaukset SET " +
-                "HuoneNro = @hno, AsiakasNro = @anro, Sisaan = @sis, Ulos = @ulo " +
-                "WHERE VarausNro = @vnro";
+                "HuoneNro = @hno, AsiakasID = @anro, Huonetyyppi = @hty, Sisaan = @sis, Ulos = @ulo " +
+                "WHERE VarausID = @vnro";
             komento.CommandText = updating;
             komento.Connection = yhteys.otaYhteys();
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = huonro;
-            komento.Parameters.Add("@anro", MySqlDbType.Int32).Value = asnro;
-            komento.Parameters.Add("@sis", MySqlDbType.Date).Value = sisa;
-            komento.Parameters.Add("@ulo", MySqlDbType.VarChar).Value = ulos;
+            komento.Parameters.Add("@hty", MySqlDbType.VarChar).Value = huotyyp;
+            komento.Parameters.Add("@anro", MySqlDbType.Int32).Value = asid;
+            komento.Parameters.Add("@sis", MySqlDbType.DateTime).Value = sisa;
+            komento.Parameters.Add("@ulo", MySqlDbType.DateTime).Value = ulos;
             komento.Parameters.Add("@vnro", MySqlDbType.Int32).Value = varnro;
 
             yhteys.avaaYhteys();

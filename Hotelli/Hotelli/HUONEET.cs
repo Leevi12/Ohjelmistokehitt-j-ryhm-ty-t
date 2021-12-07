@@ -26,7 +26,7 @@ namespace Hotelli
 
         public DataTable TyypillisetHuoneet()
         {
-            MySqlCommand komento = new MySqlCommand("SELECT huoneNro FROM huoneet WHERE Vapaa = true", yhteys.otaYhteys());
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM huoneet WHERE Vapaa = 'Kyllä'", yhteys.otaYhteys());
             MySqlDataAdapter adap = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 

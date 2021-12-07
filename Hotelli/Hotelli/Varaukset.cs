@@ -28,16 +28,17 @@ namespace Hotelli
             VarauksetDG.DataSource = varaus.haeVaraukset();
 
             HuoneTyyppiCB.ValueMember = "KategoriaId";
-            HuoneTyyppiCB.DataSource = huone.haeHuoneet();
+            HuoneTyyppiCB.DataSource = huone.TyypillisetHuoneet();
             HuoneTyyppiCB.DisplayMember = "Huonetyyppi";
 
             AsiakasCB.ValueMember = "AsiakasID";
             AsiakasCB.DisplayMember = "Kokonimi";
             AsiakasCB.DataSource = asiakas.getAsiakkaat();
 
+            HuoneNroCB.DataSource = huone.TyypillisetHuoneet();
             HuoneNroCB.ValueMember = "HuoneNro";
             HuoneNroCB.DisplayMember = "HuoneNro";
-            HuoneNroCB.DataSource = huone.TyypillisetHuoneet();
+            
 
         }
 
@@ -45,12 +46,12 @@ namespace Hotelli
         {
             
             int asiakas = Convert.ToInt32(AsiakasCB.SelectedValue.ToString());
-
-            int huone = Convert.ToInt32(HuoneTyyppiCB.SelectedValue.ToString());
+            String huonetyyppi = HuoneTyyppiCB.SelectedValue.ToString();
+            int huonenumero = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
             DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
             DateTime uloskirjautuminen = Convert.ToDateTime(UlosDTP.Value);
 
-            if (varaus.addVaraus(huone, asiakas, sisaankirjautuminen, uloskirjautuminen))
+            if (varaus.addVaraus(asiakas, huonetyyppi, huonenumero, sisaankirjautuminen, uloskirjautuminen))
             {
                 MessageBox.Show("Varauksen lisäys onnistui", "Varaus", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -65,7 +66,7 @@ namespace Hotelli
         {
             HuoneNroCB.ValueMember = "Huonetyyppi"; 
             HuoneNroCB.DisplayMember = "Huonetyyppi";
-            HuoneNroCB.DataSource = huone.haeHuoneet();
+            HuoneNroCB.DataSource = huone.TyypillisetHuoneet();
 
         }
 
@@ -86,15 +87,16 @@ namespace Hotelli
 
         private void MuokVrBT_Click(object sender, EventArgs e)
         {
-            int huone = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
+            int huonenumero = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
+            String huonetyyppi = HuoneTyyppiCB.SelectedValue.ToString();
             int asiakas = Convert.ToInt32(AsiakasCB.SelectedValue.ToString());
-            DateTime sisaan = Convert.ToDateTime(SisaanDTP.Value);
-            DateTime ulos = Convert.ToDateTime(UlosDTP.Value);
+            DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
+            DateTime uloskirjautuminen = Convert.ToDateTime(UlosDTP.Value);
             try
             {
                 int vara = Convert.ToInt32(VrNumeroTB.Text);
 
-                if (varaus.editVaraus(vara, huone, asiakas, sisaan, ulos))
+                if (varaus.editVaraus(vara, asiakas, huonetyyppi, huonenumero, sisaankirjautuminen, uloskirjautuminen))
                 {
                     MessageBox.Show("Huone muokattu onnistuneesti", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
