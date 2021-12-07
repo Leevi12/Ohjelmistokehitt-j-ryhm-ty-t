@@ -42,7 +42,7 @@ namespace Hotelli
         }
         public DataTable getAsiakkaat()
         {
-            MySqlCommand komento = new MySqlCommand("SELECT * FROM asiakkaat", yhteys.otaYhteys());
+            MySqlCommand komento = new MySqlCommand("SELECT *, Concat(etunimi, ' ', sukunimi) AS Kokonimi FROM asiakkaat", yhteys.otaYhteys());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 
