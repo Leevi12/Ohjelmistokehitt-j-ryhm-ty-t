@@ -115,7 +115,6 @@ namespace Hotelli
             this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 20;
             this.label2.Text = "Varausnumero:";
-            this.label2.Visible = false;
             // 
             // label4
             // 
@@ -143,7 +142,6 @@ namespace Hotelli
             this.label6.Size = new System.Drawing.Size(137, 20);
             this.label6.TabIndex = 24;
             this.label6.Text = "Huoneen numero:";
-            this.label6.Visible = false;
             // 
             // label7
             // 
@@ -161,7 +159,6 @@ namespace Hotelli
             this.VrNumeroTB.Name = "VrNumeroTB";
             this.VrNumeroTB.Size = new System.Drawing.Size(208, 26);
             this.VrNumeroTB.TabIndex = 27;
-            this.VrNumeroTB.Visible = false;
             // 
             // SisaanDTP
             // 
@@ -192,7 +189,6 @@ namespace Hotelli
             this.HuoneNroCB.Name = "HuoneNroCB";
             this.HuoneNroCB.Size = new System.Drawing.Size(208, 28);
             this.HuoneNroCB.TabIndex = 42;
-            this.HuoneNroCB.Visible = false;
             this.HuoneNroCB.SelectedIndexChanged += new System.EventHandler(this.HuoneNroCB_SelectedIndexChanged);
             // 
             // AsiakasCB

@@ -27,7 +27,7 @@ namespace Hotelli
 
             VarauksetDG.DataSource = varaus.haeVaraukset();
 
-            HuoneTyyppiCB.ValueMember = "KategoriaId";
+            HuoneTyyppiCB.ValueMember = "Huonetyyppi";
             HuoneTyyppiCB.DataSource = huone.TyypillisetHuoneet();
             HuoneTyyppiCB.DisplayMember = "Huonetyyppi";
 
@@ -121,9 +121,10 @@ namespace Hotelli
         {
             VrNumeroTB.Text = VarauksetDG.CurrentRow.Cells[0].Value.ToString();
             AsiakasCB.Text = VarauksetDG.CurrentRow.Cells[1].Value.ToString();
-            HuoneNroCB.Text = VarauksetDG.CurrentRow.Cells[2].Value.ToString();
-            SisaanDTP.Text = VarauksetDG.CurrentRow.Cells[3].Value.ToString();
-            UlosDTP.Text = VarauksetDG.CurrentRow.Cells[4].Value.ToString();
+            HuoneNroCB.Text = VarauksetDG.CurrentRow.Cells[3].Value.ToString();
+            SisaanDTP.Text = VarauksetDG.CurrentRow.Cells[4].Value.ToString();
+            UlosDTP.Text = VarauksetDG.CurrentRow.Cells[5].Value.ToString();
+            HuoneTyyppiCB.Text = VarauksetDG.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void PoisVrBT_Click(object sender, EventArgs e)
