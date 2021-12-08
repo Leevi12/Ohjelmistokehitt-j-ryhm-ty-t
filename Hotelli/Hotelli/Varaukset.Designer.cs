@@ -58,6 +58,7 @@ namespace Hotelli
             this.VarauksetDG.RowTemplate.Height = 28;
             this.VarauksetDG.Size = new System.Drawing.Size(1149, 239);
             this.VarauksetDG.TabIndex = 0;
+            this.VarauksetDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VarauksetDG_CellClick_1);
             // 
             // PoisVrBT
             // 

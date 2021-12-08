@@ -117,7 +117,7 @@ namespace Hotelli
 
         }
 
-        private void VarauksetDG_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void VarauksetDG_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             VrNumeroTB.Text = VarauksetDG.CurrentRow.Cells[0].Value.ToString();
             AsiakasCB.Text = VarauksetDG.CurrentRow.Cells[1].Value.ToString();
@@ -148,5 +148,7 @@ namespace Hotelli
             }
             TyhjVrBT.PerformClick();
         }
+
+        
     }
 }
