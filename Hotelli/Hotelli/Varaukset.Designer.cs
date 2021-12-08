@@ -58,7 +58,7 @@ namespace Hotelli
             this.VarauksetDG.RowTemplate.Height = 28;
             this.VarauksetDG.Size = new System.Drawing.Size(1149, 239);
             this.VarauksetDG.TabIndex = 0;
-            this.VarauksetDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VarauksetDG_CellClick_1);
+            this.VarauksetDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VarauksetDG_CellClick);
             // 
             // PoisVrBT
             // 
@@ -98,6 +98,7 @@ namespace Hotelli
             this.TyhjVrBT.TabIndex = 33;
             this.TyhjVrBT.Text = "Tyhjennä";
             this.TyhjVrBT.UseVisualStyleBackColor = true;
+            this.TyhjVrBT.Click += new System.EventHandler(this.TyhjVrBT_Click);
             // 
             // label1
             // 

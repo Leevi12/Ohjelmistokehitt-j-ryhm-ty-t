@@ -31,7 +31,7 @@ namespace Hotelli
             HuoneTyyppiCB.DataSource = huone.TyypillisetHuoneet();
             HuoneTyyppiCB.DisplayMember = "Huonetyyppi";
 
-            AsiakasCB.ValueMember = "AsiakasID";
+            AsiakasCB.ValueMember = "Kokonimi";
             AsiakasCB.DisplayMember = "Kokonimi";
             AsiakasCB.DataSource = asiakas.getAsiakkaat();
 
@@ -45,7 +45,7 @@ namespace Hotelli
         private void TallVrBT_Click(object sender, EventArgs e)
         {
             
-            int asiakas = Convert.ToInt32(AsiakasCB.SelectedValue.ToString());
+            String asiakas = AsiakasCB.SelectedValue.ToString();
             String huonetyyppi = HuoneTyyppiCB.SelectedValue.ToString();
             int huonenumero = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
             DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
@@ -72,7 +72,7 @@ namespace Hotelli
 
         private void AsiakasCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AsiakasCB.ValueMember = "AsiakasID";
+            AsiakasCB.ValueMember = "Kokonimi";
             AsiakasCB.DisplayMember = "Kokonimi";
             AsiakasCB.DataSource = asiakas.getAsiakkaat();
 
@@ -89,7 +89,7 @@ namespace Hotelli
         {
             int huonenumero = Convert.ToInt32(HuoneNroCB.SelectedValue.ToString());
             String huonetyyppi = HuoneTyyppiCB.SelectedValue.ToString();
-            int asiakas = Convert.ToInt32(AsiakasCB.SelectedValue.ToString());
+            String asiakas = AsiakasCB.SelectedValue.ToString();
             DateTime sisaankirjautuminen = Convert.ToDateTime(SisaanDTP.Value);
             DateTime uloskirjautuminen = Convert.ToDateTime(UlosDTP.Value);
             try
@@ -117,14 +117,14 @@ namespace Hotelli
 
         }
 
-        private void VarauksetDG_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void VarauksetDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             VrNumeroTB.Text = VarauksetDG.CurrentRow.Cells[0].Value.ToString();
             AsiakasCB.Text = VarauksetDG.CurrentRow.Cells[1].Value.ToString();
+            HuoneTyyppiCB.Text = VarauksetDG.CurrentRow.Cells[2].Value.ToString();
             HuoneNroCB.Text = VarauksetDG.CurrentRow.Cells[3].Value.ToString();
             SisaanDTP.Text = VarauksetDG.CurrentRow.Cells[4].Value.ToString();
             UlosDTP.Text = VarauksetDG.CurrentRow.Cells[5].Value.ToString();
-            HuoneTyyppiCB.Text = VarauksetDG.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void PoisVrBT_Click(object sender, EventArgs e)
@@ -149,6 +149,14 @@ namespace Hotelli
             TyhjVrBT.PerformClick();
         }
 
-        
+        private void TyhjVrBT_Click(object sender, EventArgs e)
+        {
+            VrNumeroTB.Text = "";
+            AsiakasCB.Text = "";
+            HuoneTyyppiCB.Text = "";
+            HuoneNroCB.Text = "";
+            SisaanDTP.Text = "";
+            UlosDTP.Text = "";
+        }
     }
 }

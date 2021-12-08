@@ -47,7 +47,7 @@ namespace Hotelli
             return taulu;
         }
 
-        public bool addVaraus(int asid, String huotyyp, int huonro, DateTime sisa, DateTime ulos)
+        public bool addVaraus(String asid, String huotyyp, int huonro, DateTime sisa, DateTime ulos)
         {
             MySqlCommand komento = new MySqlCommand();
             String adding = "INSERT INTO varaukset " +
@@ -57,7 +57,7 @@ namespace Hotelli
             komento.Connection = yhteys.otaYhteys();
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = huonro;
             komento.Parameters.Add("@hty", MySqlDbType.VarChar).Value = huotyyp;
-            komento.Parameters.Add("@anro", MySqlDbType.Int32).Value = asid;
+            komento.Parameters.Add("@anro", MySqlDbType.VarChar).Value = asid;
             komento.Parameters.Add("@sis", MySqlDbType.DateTime).Value = sisa;
             komento.Parameters.Add("@ulo", MySqlDbType.DateTime).Value = ulos;
 
@@ -82,7 +82,7 @@ namespace Hotelli
             }
         }
 
-        public bool editVaraus(int varnro, int asid, String huotyyp, int huonro, DateTime sisa, DateTime ulos)
+        public bool editVaraus(int varnro, String asid, String huotyyp, int huonro, DateTime sisa, DateTime ulos)
         {
             MySqlCommand komento = new MySqlCommand();
             String updating = "UPDATE varaukset SET " +
@@ -92,7 +92,7 @@ namespace Hotelli
             komento.Connection = yhteys.otaYhteys();
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = huonro;
             komento.Parameters.Add("@hty", MySqlDbType.VarChar).Value = huotyyp;
-            komento.Parameters.Add("@anro", MySqlDbType.Int32).Value = asid;
+            komento.Parameters.Add("@anro", MySqlDbType.VarChar).Value = asid;
             komento.Parameters.Add("@sis", MySqlDbType.DateTime).Value = sisa;
             komento.Parameters.Add("@ulo", MySqlDbType.DateTime).Value = ulos;
             komento.Parameters.Add("@vnro", MySqlDbType.Int32).Value = varnro;
