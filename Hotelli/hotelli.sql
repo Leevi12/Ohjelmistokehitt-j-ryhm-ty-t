@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 02, 2021 at 01:52 PM
+-- Generation Time: Dec 08, 2021 at 03:51 PM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -38,14 +38,15 @@ CREATE TABLE IF NOT EXISTS `asiakkaat` (
   `postitoimipaikka` varchar(20) NOT NULL,
   `salasana` varchar(20) NOT NULL,
   PRIMARY KEY (`AsiakasID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `asiakkaat`
 --
 
 INSERT INTO `asiakkaat` (`AsiakasID`, `kayttajanimi`, `etunimi`, `sukunimi`, `lahiosoite`, `postinumero`, `postitoimipaikka`, `salasana`) VALUES
-(1, 'ErkEsim', 'Erkki', 'Esimerkki', 'Esimerkkitie 1 A', '00200', 'Helsinki', 'password');
+(1, 'ErkEsim', 'Erkki', 'Esimerkki', 'Esimerkkitie 1 A', '00200', 'Helsinki', 'password'),
+(2, 'LeeSanta', 'Leevi', 'Santaclaus', 'katu 1', '0909', 'hyvinkää', 'KOKOK');
 
 -- --------------------------------------------------------
 
@@ -61,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `huoneet` (
   `vapaa` varchar(10) NOT NULL,
   PRIMARY KEY (`huoneNro`),
   KEY `huoneTyyppi` (`huoneTyyppi`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `huoneet`
@@ -72,7 +73,10 @@ INSERT INTO `huoneet` (`huoneNro`, `huoneTyyppi`, `puhelin`, `vapaa`) VALUES
 (2, '1H', '102', 'Kyllä'),
 (3, '2H', '103', 'Kyllä'),
 (4, '2H', '104', 'Kyllä'),
-(5, '2H', '105', 'Kyllä');
+(5, '2H', '105', 'Kyllä'),
+(6, '2H+K', '106', 'Kyllä'),
+(7, '2H+K', '107', 'Ei'),
+(8, '1H', '108', 'Ei');
 
 -- --------------------------------------------------------
 
@@ -96,20 +100,23 @@ CREATE TABLE IF NOT EXISTS `huonekategoria` (
 DROP TABLE IF EXISTS `varaukset`;
 CREATE TABLE IF NOT EXISTS `varaukset` (
   `VarausID` int NOT NULL AUTO_INCREMENT,
-  `AsiakasID` int NOT NULL,
+  `AsiakasID` varchar(50) NOT NULL,
   `Huonetyyppi` varchar(10) NOT NULL,
   `HuoneNro` int NOT NULL,
   `Sisaan` date NOT NULL,
   `Ulos` date NOT NULL,
-  PRIMARY KEY (`VarausID`)
-) ENGINE=MyISAM AUTO_INCREMENT=1256 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`VarausID`),
+  KEY `AsiakasID` (`AsiakasID`),
+  KEY `fk_huone` (`HuoneNro`)
+) ENGINE=MyISAM AUTO_INCREMENT=1262 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `varaukset`
 --
 
 INSERT INTO `varaukset` (`VarausID`, `AsiakasID`, `Huonetyyppi`, `HuoneNro`, `Sisaan`, `Ulos`) VALUES
-(1255, 1, '2H+K', 1, '1814-12-12', '2042-12-12');
+(1255, '1', '2H+K', 2, '1814-12-12', '2042-12-01'),
+(1261, '2', '2H+K', 2, '2021-12-08', '2021-12-31');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
