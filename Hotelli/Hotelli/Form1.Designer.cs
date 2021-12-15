@@ -44,6 +44,7 @@ namespace Hotelli
             this.SignInBT.TabIndex = 0;
             this.SignInBT.Text = "Sign In";
             this.SignInBT.UseVisualStyleBackColor = true;
+            this.SignInBT.Click += new System.EventHandler(this.SignInBT_Click);
             // 
             // UsernameTB
             // 

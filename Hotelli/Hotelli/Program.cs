@@ -16,7 +16,7 @@ namespace Hotelli
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Paaikkuna());
+            Application.Run(new Form1());
         }
     }
 }

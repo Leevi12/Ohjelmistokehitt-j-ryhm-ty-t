@@ -29,6 +29,7 @@ namespace Hotelli
             komento.Parameters.Add("@sala", MySqlDbType.VarChar).Value = sala;
 
             yhteys.avaaYhteys();
+            
             if (komento.ExecuteNonQuery() == 1)
             {
                 yhteys.suljeYhteys();
@@ -39,6 +40,7 @@ namespace Hotelli
                 yhteys.suljeYhteys();
                 return false;
             }
+            
         }
         public DataTable getAsiakkaat()
         {
